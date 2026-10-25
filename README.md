@@ -4,13 +4,11 @@ Sitio estático de Víctor Andrés Gómez López (fisioterapia deportiva y cienc
 
 ## Contenido
 
-| Archivo | Qué es |
-| --- | --- |
-| `index.html` | Portada con enlaces a las tres versiones y al plan |
-| `lumbar-saudi-es.html` | Lumbalgia crónica en Arabia Saudí, en español |
-| `lumbar-saudi-en.html` | La misma página en inglés |
-| `lumbar-saudi-ar.html` | La misma página en árabe (RTL; pendiente de revisión nativa) |
-| `plan.html` | Plan del proyecto de dosificación de carga: objetivo, tres módulos (tendinopatía aquílea, isquiosurales, lumbalgia crónica), hoja de ruta de unas 12 semanas, requisitos para un estudio en Riad, riesgos y referencias |
+- `index.html`: Portada con enlaces a las tres versiones y al plan
+- `lumbar-saudi-es.html`: Lumbalgia crónica en Arabia Saudí, en español
+- `lumbar-saudi-en.html`: La misma página en inglés
+- `lumbar-saudi-ar.html`: La misma página en árabe (RTL; pendiente de revisión nativa)
+- `plan.html`: Plan del proyecto de dosificación de carga: objetivo, tres módulos (tendinopatía aquílea, isquiosurales, lumbalgia crónica), hoja de ruta de unas 12 semanas, requisitos para un estudio en Riad, riesgos y referencias
 
 Las páginas son HTML autónomo con CSS y JavaScript en línea (animaciones al hacer scroll, barra de progreso, contadores). Respetan `prefers-reduced-motion`. Solo dependen de Google Fonts.
 
