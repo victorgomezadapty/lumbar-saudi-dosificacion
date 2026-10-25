@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{dir}}" data-loc="{{loc}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<meta name="theme-color" content="#0b111c">
+<link rel="alternate" hreflang="es" href="lumbar-saudi-es.html"><link rel="alternate" hreflang="en" href="lumbar-saudi-en.html"><link rel="alternate" hreflang="ar" href="lumbar-saudi-ar.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161e2e'/%3E%3Cpath d='M4 17h5l2-7 3 13 3-16 3 14 2-4h6' fill='none' stroke='%23e8603c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>{{css}}</style>
+</head>
+<body>
+<a class="skip" href="#main">{{skip}}</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+ <div class="wrap">
+  <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#161e2e" stroke="#33415e"/><path d="M4 17h5l2-7 3 13 3-16 3 14 2-4h6" fill="none" stroke="#e8603c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{brand}}</a>
+  <nav class="nav" aria-label="{{navlabel}}">
+   <a href="#saudi">01 {{n1}}</a><a href="#guides">02 {{n2}}</a><a href="#dose">03 {{n3}}</a><a href="#gaps">04 {{n4}}</a><a href="#sources">05 {{n5}}</a><a href="plan.html" hreflang="es" style="color:#ff8a65">{{nplan}}</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Idioma / Language / اللغة">
+   <a href="lumbar-saudi-es.html" hreflang="es" lang="es" {{cur_es}}>ES</a><a href="lumbar-saudi-en.html" hreflang="en" lang="en" {{cur_en}}>EN</a><a href="lumbar-saudi-ar.html" hreflang="ar" lang="ar" {{cur_ar}}>AR</a>
+  </div>
+ </div>
+</header>
+
+<main id="main">
+<div class="wrap hero" id="top">
+ <div class="hero-grid">
+  <div>
+   <div class="kicker"><span class="dot"></span>{{kicker}}</div>
+   <h1>{{h1a}}<br><span class="y">{{h1b}}</span><br><span class="c">{{h1c}}</span></h1>
+   <p class="lead">{{lead}}</p>
+   <div class="cta">
+    <a class="btn primary" href="#index">{{cta1}} ↓</a>
+    <a class="btn" href="#dose">{{cta2}}</a>
+   </div>
+  </div>
+  <figure class="scope" style="margin:0">
+   <div class="scope-top"><span class="live">● {{scope_live}}</span><span>{{scope_src}}</span></div>
+   <div class="rings">
+    <div><svg viewBox="0 0 160 160" role="img" aria-label="{{r1_aria}}"><circle class="trk" cx="80" cy="80" r="62"/><circle class="arc" cx="80" cy="80" r="62" stroke="#26a3cc" data-p="52.3"/><text class="v" x="80" y="91" text-anchor="middle" direction="ltr">{{r1v}}</text></svg><p>{{r1}}</p></div>
+    <div><svg viewBox="0 0 160 160" role="img" aria-label="{{r2_aria}}"><circle class="trk" cx="80" cy="80" r="62"/><circle class="arc" cx="80" cy="80" r="62" stroke="#e8603c" data-p="64"/><text class="v" x="80" y="91" text-anchor="middle" direction="ltr">{{r2v}}</text></svg><p>{{r2}}</p></div>
+   </div>
+   <figcaption class="scope-cap">{{scope_cap}}</figcaption>
+  </figure>
+ </div>
+ <div class="kpis">
+  <div class="kpi reveal"><b data-count="124">124</b><span>{{k1}}</span></div>
+  <div class="kpi reveal d1"><b data-count="146552">{{k2v}}</b><span>{{k2}}</span></div>
+  <div class="kpi reveal d2"><b class="y" data-count="11">11</b><span>{{k3}}</span></div>
+  <div class="kpi reveal d3"><b class="c" data-count="0">0</b><span>{{k4}}</span></div>
+  <div class="kpi reveal d4"><b data-count="239">239</b><span>{{k5}}</span></div>
+ </div>
+
+ <div id="index" style="margin-top:64px">
+  <div class="num reveal">00 / {{idx_t}}</div>
+  <nav class="toc" aria-label="{{idx_t}}">
+   <a class="reveal" href="#saudi"><span class="k">01</span><b>{{n1}}</b><span>{{i1}}</span></a>
+   <a class="reveal d1" href="#guides"><span class="k">02</span><b>{{n2}}</b><span>{{i2}}</span></a>
+   <a class="reveal d2" href="#dose"><span class="k">03</span><b>{{n3}}</b><span>{{i3}}</span></a>
+   <a class="reveal d3" href="#gaps"><span class="k">04</span><b>{{n4}}</b><span>{{i4}}</span></a>
+   <a class="reveal d4" href="#sources"><span class="k">05</span><b>{{n5}}</b><span>{{i5}}</span></a>
+  </nav>
+ </div>
+</div>
+
+<section id="saudi">
+ <div class="wrap">
+  <div class="num reveal">01 / {{s1_num}}</div>
+  <h2 class="reveal">{{s1_h}}</h2>
+  <p class="lead reveal">{{s1_lead}}</p>
+  <div class="grid-2" style="margin-top:30px">
+   <div class="card glow reveal">
+    <span class="tag">{{g_tag}}</span>
+    <h3 style="margin-top:12px">{{g_h}}</h3>
+    <p>{{g_p}}</p>
+    <div class="table-wrap"><table>
+     <thead><tr><th>{{g_th1}}</th><th>{{g_th2}}</th><th>{{g_th3}}</th></tr></thead>
+     <tbody>
+      <tr><td>{{g_r1a}}</td><td class="yes">{{strong}}</td><td>{{g_r1c}}</td></tr>
+      <tr><td>{{g_r2a}}</td><td class="yes">{{strong}}</td><td>{{g_r2c}}</td></tr>
+      <tr><td>{{g_r3a}}</td><td>{{cond}}</td><td>{{g_r3c}}</td></tr>
+      <tr><td>{{g_r4a}}</td><td>{{cond}}</td><td>{{g_r4c}}</td></tr>
+      <tr><td>{{g_r5a}}</td><td class="no">{{g_r5b}}</td><td>{{g_r5c}}</td></tr>
+     </tbody></table></div>
+    <a class="small" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12842004/">{{g_link}}</a>
+   </div>
+   <div>
+    <div class="callout reveal d1"><strong>{{nice_h}}</strong> {{nice_p}} <a href="https://www.nice.org.uk/guidance/ng59/chapter/Update-information">NICE NG59, update information</a></div>
+    <div class="card reveal d2">
+     <span class="tag coral">{{prev_tag}}</span>
+     <p>{{prev_p}}</p>
+     <a class="small" href="https://doi.org/10.2147/jpr.s607375">doi.org/10.2147/jpr.s607375</a>
+    </div>
+   </div>
+  </div>
+
+  <h3 class="reveal" style="margin-top:48px">{{prac_h}}</h3>
+  <div class="ev-grid">
+   <div class="ev reveal"><span class="yr">2021 · Int J Gen Med</span><b>Alhowimel {{etal}}</b><span class="big">35%</span><p>{{alh_p}}</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8728917/">PMC8728917</a></div>
+   <div class="ev reveal d1"><span class="yr">2022 · Physiother Theory Pract</span><b>Moslem {{etal}} <span class="abs">{{abs}}</span></b><span class="big">5.3% · 57.4%</span><p>{{mos_p}}</p><a href="https://pubmed.ncbi.nlm.nih.gov/32838639/">PubMed 32838639</a></div>
+   <div class="ev reveal d2"><span class="yr">2020 · BMJ Open</span><b>Alshehri {{etal}} <span class="abs">{{abs}}</span></b><span class="big">87.1%</span><p>{{als_p}}</p><a href="https://bmjopen.bmj.com/content/10/6/e037159">BMJ Open e037159</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7311013/">PMC7311013</a></div>
+  </div>
+  <p class="small soft reveal">{{attr_note}}</p>
+
+  <div class="grid-3" style="margin-top:34px">
+   <div class="card reveal"><span class="tag">{{ds_tag}}</span><h3 style="margin-top:12px">{{ds_h}}</h3><p>{{ds_p}}</p><a class="small" href="https://zenodo.org/records/23498061">zenodo.org/records/23498061</a></div>
+   <div class="card reveal d1"><span class="tag">{{tools_tag}}</span><h3 style="margin-top:12px">{{tools_h}}</h3><p>{{tools_p1}} <a href="https://doi.org/10.1016/j.jos.2018.09.007">doi</a></p><p>{{tools_p2}} <span class="abs">{{abs}}</span> <a href="https://pubmed.ncbi.nlm.nih.gov/25262247/">PubMed</a></p></div>
+   <div class="card reveal d2"><span class="tag">{{ct_tag}}</span><h3 style="margin-top:12px">{{ct_h}}</h3><p>{{ct_p}}</p><p class="small soft">{{ct_note}}</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="guides">
+ <div class="wrap">
+  <div class="num reveal">02 / {{s2_num}}</div>
+  <h2 class="reveal">{{s2_h}}</h2>
+  <p class="lead reveal">{{s2_lead}}</p>
+  <div class="table-wrap reveal">
+   <table>
+    <thead><tr><th>{{t_g}}</th><th>{{t_says}}</th><th>{{t_dose}}</th></tr></thead>
+    <tbody>
+     <tr><td><b>NICE NG59</b><br><span class="soft small">{{nice_y}}</span></td><td>{{nice_s}}</td><td class="no">{{nodose}}</td></tr>
+     <tr><td><b>ACP 2017</b><br><span class="soft small">Qaseem {{etal}}, Ann Intern Med</span> <span class="abs">{{abs}}</span></td><td>{{acp_s}}</td><td class="no">{{nodose}}</td></tr>
+     <tr><td><b>{{who_n}}</b><br><span class="soft small">ISBN 978-92-4-008178-9</span></td><td>{{who_s}}</td><td class="yes">{{who_d}}</td></tr>
+     <tr><td><b>JOSPT 2021</b><br><span class="soft small">George {{etal}}</span></td><td>{{jos_s}}</td><td class="no">{{nodose}}</td></tr>
+     <tr><td><b>KCE 287</b><br><span class="soft small">{{kce_y}}</span></td><td>{{kce_s}}</td><td class="no">{{nodose}}</td></tr>
+     <tr><td><b>Alberta TOP</b><br><span class="soft small">{{alb_y}}</span></td><td>{{alb_s}}</td><td class="no">{{nodose}}</td></tr>
+     <tr><td><b>KNGF 2021</b><br><span class="soft small">{{kngf_y}}</span></td><td>{{kngf_s}}</td><td class="yes">{{kngf_d}}</td></tr>
+     <tr><td><b>{{dk_n}}</b><br><span class="soft small">{{dk_y}}</span></td><td>{{dk_s}}</td><td class="yes">{{dk_d}}</td></tr>
+    </tbody>
+   </table>
+  </div>
+
+  <div class="grid-2" style="margin-top:20px">
+   <div class="card glow reveal">
+    <span class="tag">KNGF 2021 · FITT</span>
+    <h3 style="margin-top:12px">{{kt_h}}</h3>
+    <div class="table-wrap"><table>
+     <thead><tr><th>{{kt_c0}}</th><th>{{kt_c1}}</th><th>{{kt_c2}}</th></tr></thead>
+     <tbody>
+      <tr><td><b>{{kt_s}}</b></td><td>{{kt_s1}}</td><td>{{kt_s2}}</td></tr>
+      <tr><td><b>{{kt_a}}</b></td><td>{{kt_a1}}</td><td>{{kt_a2}}</td></tr>
+      <tr><td><b>{{kt_f}}</b></td><td>{{kt_f1}}</td><td>{{kt_f2}}</td></tr>
+      <tr><td><b>{{kt_n}}</b></td><td colspan="2">{{kt_n1}}</td></tr>
+     </tbody></table></div>
+    <p class="small">{{kt_resp}}</p>
+    <a class="small" href="https://www.kennisplatformfysiotherapie.nl/app/uploads/sites/2/2024/11/kngf_richtlijn_lage_rugpijn_en_lrs_2021.pdf">KNGF {{pdf}}</a>
+   </div>
+   <div>
+    <div class="callout cy reveal d1"><strong>{{who_q_h}}</strong> “Programmes that are tailored to the clinical profile of the individual (personalized), supervised (...), and encourage adherence to achieve a high dose (at least 20 h of total programme time), are generally more beneficial.” <span class="soft small">{{who_q_src}}</span></div>
+    <div class="card reveal d2" style="border-style:dashed">
+     <span class="tag coral">{{mc_tag}}</span>
+     <h3 style="margin-top:12px">{{mc_h}}</h3>
+     <p>{{mc_p1}}</p>
+     <p>{{mc_p2}}</p>
+     <a class="small" href="https://doi.org/10.1016/j.apmr.2008.06.026">McGill SM, Karpowicz A. Arch Phys Med Rehabil 2009;90(1):118-26</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="dose">
+ <div class="wrap">
+  <div class="num reveal">03 / {{s3_num}}</div>
+  <h2 class="reveal">{{s3_h}}</h2>
+  <p class="lead reveal">{{s3_lead}}</p>
+  <div class="grid-2" style="margin-top:30px">
+   <div class="card glow reveal">
+    <span class="tag coral">Arora {{etal}} · BJSM 2026</span> <span class="abs">{{abs}}</span>
+    <h3 style="margin-top:12px">{{ar_h}}</h3>
+    <p>{{ar_p}}</p>
+    <div class="optima">
+     <div class="opt"><b>{{ar_dis}}</b><div class="chips"><span>{{ar_d1}}</span><span>{{ar_m1}}</span><span>{{ar_d3}}</span></div></div>
+     <div class="opt"><b>{{ar_pain}}</b><div class="chips"><span>{{ar_p1}}</span><span>{{ar_m2}}</span><span>{{ar_p3}}</span></div></div>
+    </div>
+    <p class="small" style="margin-top:14px">{{ar_lim}}</p>
+    <a class="small" href="https://pubmed.ncbi.nlm.nih.gov/42785965/">PubMed 42785965</a>
+   </div>
+   <div class="card reveal d1">
+    <span class="tag">Hayden {{etal}} · Ann Intern Med 2005</span> <span class="abs">{{abs}}</span>
+    <h3 style="margin-top:12px">{{hy_h}}</h3>
+    <p class="small muted">{{hy_sub}}</p>
+    <div class="bars" role="img" aria-label="{{hy_h}}">
+     <div class="bar"><span class="lab">{{hy_1}}</span><div class="track"><div class="fill" style="width:88.5%"></div></div><b>6.1</b></div>
+     <div class="bar"><span class="lab">{{hy_2}}</span><div class="track"><div class="fill" style="width:85.5%"></div></div><b>5.9</b></div>
+     <div class="bar"><span class="lab">{{hy_3}}</span><div class="track"><div class="fill" style="width:78.3%"></div></div><b>5.4</b></div>
+     <div class="bar"><span class="lab">{{hy_4}}</span><div class="track"><div class="fill" style="width:69.6%"></div></div><b>4.8</b></div>
+     <div class="bar"><span class="lab">{{hy_5}}</span><div class="track"><div class="fill c" style="width:26.1%"></div></div><b>1.8</b></div>
+    </div>
+    <p class="small soft">{{hy_note}}</p>
+    <a class="small" href="https://pubmed.ncbi.nlm.nih.gov/15867410/">PubMed 15867410</a>
+   </div>
+  </div>
+
+  <div class="ev-grid">
+   <div class="ev reveal"><span class="yr">JOSPT 2024</span><b>Liang {{etal}} <span class="abs">{{abs}}</span></b><p>{{li_p}}</p><a href="https://pubmed.ncbi.nlm.nih.gov/38457134/">PubMed 38457134</a></div>
+   <div class="ev reveal d1"><span class="yr">Sci Rep 2020</span><b>Mueller &amp; Niederer <span class="abs">{{abs}}</span></b><p>{{mu_p}}</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7547082/">PMC7547082</a></div>
+   <div class="ev reveal d2"><span class="yr">BMJ Open Sport Exerc Med 2024</span><b>Neason &amp; Belavý {{etal}}</b><p>{{ne_p}}</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10773405/">PMC10773405</a></div>
+   <div class="ev reveal d3"><span class="yr">Zenodo · CC BY</span><b>{{cft_h}}</b><p>{{cft_p}}</p><a href="https://zenodo.org/records/6760585">zenodo.org/records/6760585</a></div>
+  </div>
+
+  <div class="callout reveal"><strong>{{bf_h}}</strong> {{bf_p}} <a href="https://zenodo.org/records/7798024">zenodo.org/records/7798024</a></div>
+ </div>
+</section>
+
+<section id="gaps">
+ <div class="wrap">
+  <div class="num reveal">04 / {{s4_num}}</div>
+  <h2 class="reveal">{{s4_h}}</h2>
+  <p class="lead reveal">{{s4_lead}}</p>
+  <div class="grid-3" style="margin-top:26px">
+   <div class="card reveal"><span class="tag coral">{{gap}} 1</span><p>{{gap1}}</p></div>
+   <div class="card reveal d1"><span class="tag coral">{{gap}} 2</span><p>{{gap2}}</p></div>
+   <div class="card reveal d2"><span class="tag coral">{{gap}} 3</span><p>{{gap3}}</p></div>
+  </div>
+
+  <h3 class="reveal" style="margin-top:48px">{{st_h}} <span class="tag">{{proposal}}</span></h3>
+  <p class="reveal muted">{{st_p}}</p>
+  <div class="road reveal">
+   <div><b>{{st1_h}}</b><p>{{st1_p}}</p></div>
+   <div><b>{{st2_h}}</b><p>{{st2_p}}</p></div>
+   <div><b>{{st3_h}}</b><p>{{st3_p}}</p></div>
+  </div>
+
+  <div class="concept reveal" style="margin-top:48px">
+   <span class="tag coral">{{cp_tag}}</span>
+   <h3 style="margin-top:12px">{{cp_h}}</h3>
+   <p class="muted">{{cp_p}}</p>
+   <ol class="rules">
+    <li>{{ru1}}<small>{{ru1s}}</small></li>
+    <li>{{ru2}}<small>{{ru2s}}</small></li>
+    <li>{{ru3}}<small>{{ru3s}}</small></li>
+    <li>{{ru4}}<small>{{ru4s}}</small></li>
+    <li>{{ru5}}<small>{{ru5s}}</small></li>
+    <li>{{ru6}}<small>{{ru6s}}</small></li>
+    <li>{{ru7}}<small>{{ru7s}}</small></li>
+   </ol>
+   <p class="small soft">{{cp_note}}</p>
+  </div>
+ </div>
+</section>
+
+<section id="sources">
+ <div class="wrap">
+  <div class="num reveal">05 / {{s5_num}}</div>
+  <h2 class="reveal">{{s5_h}}</h2>
+  <p class="muted reveal">{{s5_lead}}</p>
+  <ol class="refs" dir="ltr" lang="en">
+   <li>Al Amer et al. Prevalence of Low Back Pain in Saudi Arabia: A Systematic Review and Meta-Analysis of 124 Studies. J Pain Res. 2026. <a href="https://doi.org/10.2147/jpr.s607375">https://doi.org/10.2147/jpr.s607375</a></li>
+   <li>Aldera M, Alturkistany A, Al Rayes H, et al., Alshehri MA. Saudi Clinical Practice Guideline for the Assessment and Management of Low Back Pain and Sciatica in Adults. J Clin Med. 2026;15(2):528. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12842004/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12842004/</a></li>
+   <li>NICE. Low back pain and sciatica in over 16s: assessment and management (NG59). 2016, last updated 29 July 2026. <a href="https://www.nice.org.uk/guidance/ng59/chapter/Recommendations">Recommendations</a> · <a href="https://www.nice.org.uk/guidance/ng59/chapter/Update-information">Update information</a></li>
+   <li>Alhowimel AS, Alotaibi MA, Alamam DM, Alodaibi FA, Fritz JM. Attitudes and Beliefs of Primary Care Physicians Working in Saudi Arabia Regarding the Management of Low Back Pain. Int J Gen Med. 2021;14:10225-10233. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8728917/">https://pmc.ncbi.nlm.nih.gov/articles/PMC8728917/</a></li>
+   <li>Moslem WM, Alrwaily M, Almarwani MM. Adherence to low back pain clinical practice guidelines by Saudi physical therapists: a cross-sectional study. Physiother Theory Pract. 2022;38(7):938-951. <a href="https://pubmed.ncbi.nlm.nih.gov/32838639/">https://pubmed.ncbi.nlm.nih.gov/32838639/</a> <span class="st">{{st_abs}}</span></li>
+   <li>Alshehri MA, Alzahrani H, Alotaibi M, Alhowimel A, Khoja O. Physiotherapists' pain attitudes and beliefs towards chronic low back pain and their association with treatment selection. BMJ Open. 2020;10(6):e037159. <a href="https://bmjopen.bmj.com/content/10/6/e037159">https://bmjopen.bmj.com/content/10/6/e037159</a> <span class="st">{{st_403}}</span> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7311013/">PMC7311013</a></li>
+   <li>Iqbal A. Longitudinal Rehabilitation Trial Dataset of Disability, Pain, and Abdominal Task Performance in Men With Chronic Low Back Pain. Zenodo, 2026, CC BY 4.0. <a href="https://zenodo.org/records/23498061">https://zenodo.org/records/23498061</a> <span class="st">{{st_zen}}</span></li>
+   <li>Elsabbagh L, Al-Atwi T, Aldossary D, Alshami AM, Hill JC, et al. Cross-cultural adaptation and validation of the STarT Back Tool for Arabic speaking adults with low back pain in Saudi Arabia. J Orthop Sci. 2019;24:200-206. <a href="https://doi.org/10.1016/j.jos.2018.09.007">https://doi.org/10.1016/j.jos.2018.09.007</a></li>
+   <li>Algarni AS, Ghorbel S, Jones JG, Guermazi M. Validation of an Arabic version of the Oswestry index in Saudi Arabia. Ann Phys Rehabil Med. 2014;57(9-10):653-63. <a href="https://pubmed.ncbi.nlm.nih.gov/25262247/">https://pubmed.ncbi.nlm.nih.gov/25262247/</a> <span class="st">{{st_abs}}</span></li>
+   <li>Qaseem A, Wilt TJ, McLean RM, Forciea MA. Noninvasive Treatments for Acute, Subacute, and Chronic Low Back Pain: A Clinical Practice Guideline From the American College of Physicians. Ann Intern Med. 2017;166:514-530. <a href="https://www.acpjournals.org/doi/10.7326/M16-2367">https://www.acpjournals.org/doi/10.7326/M16-2367</a> <span class="st">{{st_403}}</span> · <a href="https://pubmed.ncbi.nlm.nih.gov/28192789/">PubMed 28192789</a></li>
+   <li>World Health Organization. WHO guideline for non-surgical management of chronic primary low back pain in adults in primary and community care settings. 2023. ISBN 978-92-4-008178-9. <a href="https://iris.who.int/server/api/core/bitstreams/d3ff33db-d9fd-46a6-8992-e0617d71a5a6/content">IRIS PDF</a></li>
+   <li>George SZ, Fritz JM, Silfies SP, et al. Interventions for the Management of Acute and Chronic Low Back Pain: Revision 2021. J Orthop Sports Phys Ther. 2021;51(11):CPG1-CPG60. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10508241/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10508241/</a></li>
+   <li>KCE Report 287. Low back pain and radicular pain: assessment and management. Belgian Health Care Knowledge Centre, 2017. <a href="https://kce.fgov.be/sites/default/files/2021-11/KCE_287C_Low_back_pain_Summary.pdf">Summary PDF</a></li>
+   <li>Toward Optimized Practice. Evidence-informed primary care management of low back pain. Alberta, 3rd ed. 2015, minor revision 2017. <a href="https://www.albertadoctors.org/media/3gpjsawu/low-back-pain-guideline.pdf">PDF</a></li>
+   <li>KNGF/VvOCM. KNGF-richtlijn Lage rugpijn en lumbosacraal radiculair syndroom. October 2021. <a href="https://www.kennisplatformfysiotherapie.nl/app/uploads/sites/2/2024/11/kngf_richtlijn_lage_rugpijn_en_lrs_2021.pdf">PDF</a></li>
+   <li>Sundhedsstyrelsen. Anbefalinger for tværsektorielle forløb for mennesker med kroniske lænderygsmerter. Hearing draft, 14 Dec 2016: <a href="https://prodstoragehoeringspo.blob.core.windows.net/c97adea5-e168-48f1-ade6-c1793efb65f9/H%C3%B8ringsudkast_l%C3%A6nderyg.pdf">PDF</a>. Final 2017 version: <a href="https://www.sst.dk/udgivelser/2017/anbefalinger-for-tvaersektorielle-forloeb-for-mennesker-med-kroniske-laenderygsmerter">sst.dk</a> <span class="st">{{st_429}}</span></li>
+   <li>McGill SM, Karpowicz A. Exercises for spine stabilization: motion/motor patterns, stability progressions, and clinical technique. Arch Phys Med Rehabil. 2009;90(1):118-26. <a href="https://doi.org/10.1016/j.apmr.2008.06.026">https://doi.org/10.1016/j.apmr.2008.06.026</a></li>
+   <li>Arora NK, Saueressig T, Schleimer T, et al., Belavý DL. Optimal exercise dose in adults with chronic low back pain disorders: systematic review with dose-response network meta-analysis. Br J Sports Med. 2026 (online ahead of print). <a href="https://pubmed.ncbi.nlm.nih.gov/42785965/">https://pubmed.ncbi.nlm.nih.gov/42785965/</a> <span class="st">{{st_abs}}</span></li>
+   <li>Liang Z, Tian S, Wang C, et al. The Best Exercise Modality and Dose for Reducing Pain in Adults With Low Back Pain: A Systematic Review With Model-Based Bayesian Network Meta-analysis. J Orthop Sports Phys Ther. 2024;54:315-327. <a href="https://pubmed.ncbi.nlm.nih.gov/38457134/">https://pubmed.ncbi.nlm.nih.gov/38457134/</a> <span class="st">{{st_abs}}</span></li>
+   <li>Mueller J, Niederer D. Dose-response-relationship of stabilisation exercises in patients with chronic non-specific low back pain: a systematic review with meta-regression. Sci Rep. 2020;10:16921. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7547082/">https://pmc.ncbi.nlm.nih.gov/articles/PMC7547082/</a> <span class="st">{{st_abs}}</span></li>
+   <li>Hayden JA, van Tulder MW, Tomlinson G. Systematic review: strategies for using exercise therapy to improve outcomes in chronic low back pain. Ann Intern Med. 2005;142:776-785. <a href="https://pubmed.ncbi.nlm.nih.gov/15867410/">https://pubmed.ncbi.nlm.nih.gov/15867410/</a> <span class="st">{{st_abs}}</span></li>
+   <li>Neason C, Miller CT, Tagliaferri SD, Belavý DL, et al. Exercise prescription variables predict reductions in pain intensity in adults with chronic low back pain: secondary analysis of a randomised controlled trial. BMJ Open Sport Exerc Med. 2024;10:e001744. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10773405/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10773405/</a></li>
+   <li>O'Keeffe M. CFT trial dataset (cognitive functional therapy vs group exercise, participant level). Zenodo, 2022, CC BY 4.0. <a href="https://zenodo.org/records/6760585">https://zenodo.org/records/6760585</a> <span class="st">{{st_zen}}</span></li>
+   <li>Tsiarleston G, Gil-Gutiérrez YM, Donoso B, Villegas-Fuente A, et al. The BACKFIT project dataset (NCT05443880). Zenodo, 2023, CC BY 4.0. <a href="https://zenodo.org/records/7798024">https://zenodo.org/records/7798024</a> <span class="st">{{st_zen}}</span></li>
+  </ol>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="disc"><strong>{{disc_h}}</strong> {{disc_p}}</div>
+  <p>{{foot_date}}</p>
+  <p class="small soft">{{foot_style}}</p>
+ </div>
+</footer>
+<script>{{js}}</script>
+</body>
+</html>
