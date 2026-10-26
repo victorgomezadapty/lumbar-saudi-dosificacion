@@ -146,6 +146,61 @@ section{padding:56px 0}.kpis,.toc{grid-template-columns:1fr 1fr}.grid-3,.road,.o
 .js .bars:not(.in) .fill{transform:none!important}.kicker .dot{animation:none}}
 @media print{.topbar,.progress,.cta{display:none}body{background:#fff;color:#000}.js .reveal{opacity:1!important;transform:none!important}}
 
+/* Tabs */
+.tabs main section[data-panel]{display:none}
+.tabs main section[data-panel].active{display:block;animation:panel .35s ease}
+@keyframes panel{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.nav a.on{color:#e9efea;background:#17221e;box-shadow:inset 0 -2px 0 #e3a23b}
+.pager{display:none}
+.tabs .pager{display:flex;flex-wrap:wrap;gap:12px;margin-top:56px;padding-top:24px;border-top:1px solid #273a33}
+.pager a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:10px;border:1px solid #35493f;background:#17221e;color:#e9efea;text-decoration:none;font:600 14px 'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+.pager a:hover{border-color:#e3a23b}
+.pager .next{margin-inline-start:auto;background:#e3a23b;border-color:#e3a23b;color:#1a1203}
+/* Anatomy */
+.anat{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:center;margin-top:30px}
+.an-fig{margin:0}
+.an-svg{width:100%;height:auto;display:block}
+.an-skin{fill:none;stroke:#35493f;stroke-width:2;stroke-dasharray:4 6}
+.an-b polygon{fill:#26332d;stroke:#a7b5ad;stroke-width:1.6;stroke-linejoin:round}
+.an-d polygon{fill:rgba(127,220,180,.22);stroke:#7fdcb4;stroke-width:1.4}
+.an-m{fill:var(--c);fill-opacity:.32;stroke:var(--c);stroke-width:1.6;cursor:pointer;transition:opacity .25s,fill-opacity .25s}
+.an-m .fib{fill:none;stroke:#0d1311;stroke-opacity:.45;stroke-width:1.4}
+.an-l text{font:600 13px 'JetBrains Mono',ui-monospace,Consolas,monospace;fill:#e9efea;text-anchor:middle}
+.an-b,.an-d{cursor:pointer;transition:opacity .25s}
+.picking .an-svg [data-k]{opacity:.18}
+.picking .an-svg [data-k].lit{opacity:1}
+.picking .an-m.lit{fill-opacity:.65}
+.an-legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.an-chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid #35493f;background:#1c2924;color:#e9efea;font:500 14px 'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;cursor:pointer}
+.an-chip i{width:12px;height:12px;border-radius:50%;background:var(--c);flex:none}
+.an-chip[aria-pressed=true]{border-color:var(--c);box-shadow:0 0 0 1px var(--c) inset}
+.an-detail{min-height:96px;background:#1c2924;border:1px solid #273a33;border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.an-detail p{margin:0;color:#a7b5ad}
+.an-detail b{color:#e9efea}
+.picking .an-note[data-k=""]{display:none}
+/* Pictograms */
+.big3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 8px}
+.pic{margin:0;background:#1c2924;border:1px solid #273a33;border-radius:12px;padding:10px 10px 12px;text-align:center}
+.pic svg{width:100%;height:auto;display:block}
+.pic-floor{stroke:#35493f;stroke-width:2}
+.pic-body{fill:none;stroke:#c9d3cc;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.pic-body circle{fill:#c9d3cc;stroke:none}
+.pic-hi{fill:none;stroke:var(--c);stroke-width:9;stroke-linecap:round}
+.pic figcaption{font-size:12.5px;color:#a7b5ad;margin-top:6px}
+.pic figcaption b{font-weight:500}
+/* Body map */
+.bodymap{margin:30px 0 0;display:grid;justify-items:center}
+.bodymap svg{width:100%;max-width:620px;height:auto}
+.bm-body{fill:#1c2924;stroke:#35493f;stroke-width:1.6}
+.bm-hi g{fill:var(--c);fill-opacity:.55;stroke:var(--c);stroke-width:1.5}
+.bm-line{fill:none;stroke:#0d1311;stroke-width:2;stroke-opacity:.7}
+.bm-lead{fill:none;stroke:#8a998f;stroke-width:1;stroke-dasharray:3 4}
+.bm-txt text{font:600 15px 'Space Grotesk',system-ui,sans-serif;fill:#e9efea}
+.bm-txt text.sub{font:500 12px 'JetBrains Mono',ui-monospace,Consolas,monospace;fill:#8a998f}
+@media (max-width:980px){.anat{grid-template-columns:1fr}}
+@media (max-width:560px){.big3{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.tabs main section[data-panel].active{animation:none}}
+
 .road.r4{grid-template-columns:repeat(4,1fr)}
 .road.r4 div:nth-child(4)::before{border-color:#8a998f}
 .scope .rules li b{font:600 16px 'Space Grotesk',system-ui,sans-serif;color:#e9efea}
@@ -244,6 +299,7 @@ section{padding:56px 0}.kpis,.toc{grid-template-columns:1fr 1fr}.grid-3,.road,.o
   <div class="num reveal">02 / MÓDULOS</div>
   <h2 class="reveal">Tres módulos, un motor de reglas</h2>
   <p class="lead reveal">El motor es común: entradas (carga prescrita, dolor, respuesta a 24 h, cuestionario, fuerza), reglas con su fuente, y una salida (progresar, mantener o retroceder). Cambian las reglas y los umbrales de cada región.</p>
+  <figure class="bodymap reveal"><svg viewBox="20 8 480 512" role="img" aria-labelledby="bm-t"><title id="bm-t">Vista posterior del cuerpo con las tres regiones del plan</title><g class="bm-body"><circle cx="130" cy="40" r="25"/><rect x="118" y="62" width="24" height="26" rx="6"/><path d="M70 98 Q130 84 190 98 L200 170 Q186 232 178 262 L82 262 Q74 232 60 170 Z"/><path d="M80 258 L180 258 Q194 300 176 320 L132 326 L128 326 L84 320 Q66 300 80 258 Z"/><path d="M70 100 Q46 112 44 170 L38 262 Q36 278 46 280 Q56 278 55 262 L62 176 Z"/><path d="M190 100 Q214 112 216 170 L222 262 Q224 278 214 280 Q204 278 205 262 L198 176 Z"/><path d="M84 316 L126 322 L123 420 Q121 446 117 474 L113 500 Q111 510 99 510 L93 510 Q88 474 90 444 L86 420 Z"/><path d="M176 316 L134 322 L137 420 Q139 446 143 474 L147 500 Q149 510 161 510 L167 510 Q172 474 170 444 L174 420 Z"/></g><g class="bm-hi"><g style="--c:#34b78a"><rect x="102" y="198" width="56" height="58" rx="16"/><path class="bm-line" d="M130 204 V250 M118 214 H142 M118 228 H142 M118 242 H142"/></g><g style="--c:#e3a23b"><path d="M92 332 Q106 326 121 332 L117 404 Q104 412 92 402 Z"/><path d="M168 332 Q154 326 139 332 L143 404 Q156 412 168 402 Z"/></g><g style="--c:#8fb3ff"><ellipse cx="104" cy="440" rx="11" ry="22"/><rect x="101" y="462" width="6" height="40" rx="3"/><ellipse cx="156" cy="440" rx="11" ry="22"/><rect x="153" y="462" width="6" height="40" rx="3"/></g></g><g class="bm-txt"><path class="bm-lead" d="M158 226 H232"/><text x="236" y="222">Región lumbar</text><text class="sub" x="236" y="238">Módulo 3 · lumbalgia crónica</text><path class="bm-lead" d="M168 366 H232"/><text x="236" y="362">Isquiosurales</text><text class="sub" x="236" y="378">Módulo 2 · lesión muscular</text><path class="bm-lead" d="M160 480 H232"/><text x="236" y="476">Tendón de Aquiles</text><text class="sub" x="236" y="492">Módulo 1 · tendinopatía</text></g></svg><figcaption class="small soft">Vista posterior, esquema ilustrativo, no a escala. Un mismo motor de reglas para las tres regiones.</figcaption></figure>
 
   <div class="card glow reveal" style="margin-top:30px">
    <span class="tag coral">Módulo 1 · Primero</span>
@@ -445,9 +501,33 @@ function ring(svg){svg.querySelectorAll('.arc').forEach(function(a){var r=+a.get
 document.querySelectorAll('.rings .arc').forEach(function(a){var c=2*Math.PI*(+a.getAttribute('r'));a.style.strokeDasharray=c;a.style.strokeDashoffset=reduce?c*(1-a.dataset.p/100):c;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add('in');if(t.dataset.count)countUp(t);if(t.classList.contains('rings'))ring(t);io.unobserve(t);});},{threshold:0.2,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal,[data-count],.bars,.rings').forEach(function(n){io.observe(n);});
-var links=[].slice.call(document.querySelectorAll('.nav a'));
-var so=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id);});});},{rootMargin:'-45% 0px -50% 0px'});
-document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s);});
+// Tabs: each main section becomes a panel; every in-page link to it (menu, index, buttons) opens it.
+// Without JavaScript the page stays one long document.
+var panels=[].slice.call(document.querySelectorAll('main section[id]'));
+var navLinks=[].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+if(panels.length>1){
+document.documentElement.classList.add('tabs');
+var rtl=document.documentElement.dir==='rtl';
+function label(id){var a=document.querySelector('.nav a[href="#'+id+'"]');return a?a.textContent.trim():id;}
+panels.forEach(function(p,i){p.setAttribute('data-panel','');
+var f=document.createElement('nav');f.className='pager';f.setAttribute('aria-label',label(p.id));
+if(i>0){var a=document.createElement('a');a.href='#'+panels[i-1].id;a.className='prev';a.textContent=(rtl?'→ ':'← ')+label(panels[i-1].id);f.appendChild(a);}
+if(i<panels.length-1){var b=document.createElement('a');b.href='#'+panels[i+1].id;b.className='next';b.textContent=label(panels[i+1].id)+(rtl?' ←':' →');f.appendChild(b);}
+(p.querySelector('.wrap')||p).appendChild(f);});
+function show(id,target,url){panels.forEach(function(p){p.classList.toggle('active',p.id===id);});
+navLinks.forEach(function(l){var on=l.getAttribute('href')==='#'+id;l.classList.toggle('on',on);if(on)l.setAttribute('aria-current','true');else l.removeAttribute('aria-current');});
+if(url&&history.replaceState)history.replaceState(null,'','#'+id);
+if(target)target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);var t=id&&document.getElementById(id);var p=t&&t.closest('section[data-panel]');if(!p)return;e.preventDefault();show(p.id,t,true);});
+var h=decodeURIComponent(location.hash.slice(1)),ht=h&&document.getElementById(h),hp=ht&&ht.closest('section[data-panel]');
+show(hp?hp.id:panels[0].id,null,false);if(hp)setTimeout(function(){ht.scrollIntoView({block:'start'});},60);
+}
+// Anatomy: a legend chip highlights its structure in the drawing and shows its description.
+document.querySelectorAll('.anat').forEach(function(box){var chips=[].slice.call(box.querySelectorAll('.an-chip'));
+function pick(k){box.classList.toggle('picking',!!k);chips.forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.k===k));});
+box.querySelectorAll('[data-k]').forEach(function(n){if(n.classList.contains('an-chip'))return;if(n.classList.contains('an-note'))n.hidden=n.dataset.k!==k;else n.classList.toggle('lit',n.dataset.k===k);});}
+chips.forEach(function(c){c.addEventListener('click',function(){pick(c.getAttribute('aria-pressed')==='true'?'':c.dataset.k);});});
+box.querySelectorAll('.an-svg [data-k]').forEach(function(g){g.addEventListener('click',function(){pick(g.dataset.k);});});});
 })();
 </script>
 </body>

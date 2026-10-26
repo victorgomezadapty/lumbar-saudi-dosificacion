@@ -14,7 +14,7 @@ Informe en línea sobre dolor lumbar crónico en Arabia Saudí (guía nacional 2
 - `lumbar-saudi-ar.html`: la misma página en árabe (RTL; pendiente de revisión nativa, la página lo indica).
 - `plan.html`: plan del proyecto de dosificación de carga: objetivo, tres módulos (tendinopatía aquílea, isquiosurales, lumbalgia crónica), límites de los datos, hoja de ruta de unas 12 semanas, requisitos para un estudio en Riad, riesgos y referencias.
 
-Las páginas son HTML autónomo con CSS y JavaScript en línea (animaciones al hacer scroll, barra de progreso, contadores). Respetan `prefers-reduced-motion`. Solo dependen de Google Fonts.
+Las páginas son HTML autónomo con CSS y JavaScript en línea. Cada sección es una **pestaña** (el menú, el índice y los botones anterior/siguiente la abren, y la URL con `#sección` enlaza directamente); sin JavaScript se ven completas. Incluyen **dibujos anatómicos propios en SVG**: columna lumbar en vista lateral con vértebras, discos y cuatro grupos musculares (interactiva), pictogramas de los tres ejercicios de McGill y, en el plan, un mapa corporal de las tres regiones. Son esquemas ilustrativos, no a escala. Respetan `prefers-reduced-motion`. Solo dependen de Google Fonts.
 
 ## Fuentes y verificación
 
@@ -34,6 +34,7 @@ python3 render_og.py    # opcional: regenera og.png desde og.html (requiere Chro
 - `src/template.html` con `src/es.py`, `src/en.py` y `src/ar.py`: textos de cada idioma de la página de lumbalgia.
 - `src/plan_template.html`: plan del proyecto (solo español).
 - `src/index_template.html`: portada.
+- `src/anatomy.py` y `src/anatomy_text.py`: dibujos anatómicos y sus textos en ES, EN y AR.
 - `src/og.html`: composición de la imagen para redes (`og.png`).
 
 Si falta alguna clave en una plantilla, el script se detiene y la indica.

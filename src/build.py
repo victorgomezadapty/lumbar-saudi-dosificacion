@@ -3,6 +3,8 @@ import re,importlib,sys,os
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 from common import css,JS
+import anatomy
+from anatomy_text import AN
 EXTRA="""
 .road.r4{grid-template-columns:repeat(4,1fr)}
 .road.r4 div:nth-child(4)::before{border-color:SOFT}
@@ -21,11 +23,12 @@ def fill(T,d):
 T=open('template.html',encoding='utf-8').read()
 for L in ['es','en','ar']:
     D=importlib.import_module(L).D
-    d=dict(D); d['css']=css(L); d['js']=JS
+    d=dict(D); d.update(AN[L]); d['css']=css(L); d['js']=JS
+    d['anat']=anatomy.spine(AN[L]); d['big3']=anatomy.big3(AN[L])
     for x in ['es','en','ar']: d['cur_'+x]='aria-current="page"' if x==L else ''
     open(f'../lumbar-saudi-{L}.html','w',encoding='utf-8',newline='\n').write(fill(T,d))
     print(L,'extra',set(D)-set(re.findall(r'\{\{(\w+)\}\}',T)))
 es=importlib.import_module('es').D
-open('../plan.html','w',encoding='utf-8',newline='\n').write(fill(open('plan_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS,st_zen=es['st_zen'])))
+open('../plan.html','w',encoding='utf-8',newline='\n').write(fill(open('plan_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS,st_zen=es['st_zen'],bodymap=anatomy.bodymap())))
 open('../index.html','w',encoding='utf-8',newline='\n').write(fill(open('index_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS)))
 print('ok: index.html, plan.html, lumbar-saudi-{es,en,ar}.html')

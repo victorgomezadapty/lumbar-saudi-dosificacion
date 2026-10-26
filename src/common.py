@@ -136,6 +136,61 @@ section{padding:56px 0}.kpis,.toc{grid-template-columns:1fr 1fr}.grid-3,.road,.o
 .js .reveal,.bar .fill,.rings .arc,.toc a,.btn{transition:none!important;transform:none!important;opacity:1!important}
 .js .bars:not(.in) .fill{transform:none!important}.kicker .dot{animation:none}}
 @media print{.topbar,.progress,.cta{display:none}body{background:#fff;color:#000}.js .reveal{opacity:1!important;transform:none!important}}
+
+/* Tabs */
+.tabs main section[data-panel]{display:none}
+.tabs main section[data-panel].active{display:block;animation:panel .35s ease}
+@keyframes panel{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.nav a.on{color:INK;background:CARD;box-shadow:inset 0 -2px 0 CORAL}
+.pager{display:none}
+.tabs .pager{display:flex;flex-wrap:wrap;gap:12px;margin-top:56px;padding-top:24px;border-top:1px solid LINE}
+.pager a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:10px;border:1px solid LINE2;background:CARD;color:INK;text-decoration:none;font:600 14px BODYF}
+.pager a:hover{border-color:CORAL}
+.pager .next{margin-inline-start:auto;background:CORAL;border-color:CORAL;color:#1a1203}
+/* Anatomy */
+.anat{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:center;margin-top:30px}
+.an-fig{margin:0}
+.an-svg{width:100%;height:auto;display:block}
+.an-skin{fill:none;stroke:LINE2;stroke-width:2;stroke-dasharray:4 6}
+.an-b polygon{fill:#26332d;stroke:#a7b5ad;stroke-width:1.6;stroke-linejoin:round}
+.an-d polygon{fill:rgba(127,220,180,.22);stroke:#7fdcb4;stroke-width:1.4}
+.an-m{fill:var(--c);fill-opacity:.32;stroke:var(--c);stroke-width:1.6;cursor:pointer;transition:opacity .25s,fill-opacity .25s}
+.an-m .fib{fill:none;stroke:#0d1311;stroke-opacity:.45;stroke-width:1.4}
+.an-l text{font:600 13px MONOF;fill:INK;text-anchor:middle}
+.an-b,.an-d{cursor:pointer;transition:opacity .25s}
+.picking .an-svg [data-k]{opacity:.18}
+.picking .an-svg [data-k].lit{opacity:1}
+.picking .an-m.lit{fill-opacity:.65}
+.an-legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.an-chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid LINE2;background:CARD2;color:INK;font:500 14px BODYF;cursor:pointer}
+.an-chip i{width:12px;height:12px;border-radius:50%;background:var(--c);flex:none}
+.an-chip[aria-pressed=true]{border-color:var(--c);box-shadow:0 0 0 1px var(--c) inset}
+.an-detail{min-height:96px;background:CARD2;border:1px solid LINE;border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.an-detail p{margin:0;color:MUTED}
+.an-detail b{color:INK}
+.picking .an-note[data-k=""]{display:none}
+/* Pictograms */
+.big3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 8px}
+.pic{margin:0;background:CARD2;border:1px solid LINE;border-radius:12px;padding:10px 10px 12px;text-align:center}
+.pic svg{width:100%;height:auto;display:block}
+.pic-floor{stroke:LINE2;stroke-width:2}
+.pic-body{fill:none;stroke:#c9d3cc;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.pic-body circle{fill:#c9d3cc;stroke:none}
+.pic-hi{fill:none;stroke:var(--c);stroke-width:9;stroke-linecap:round}
+.pic figcaption{font-size:12.5px;color:MUTED;margin-top:6px}
+.pic figcaption b{font-weight:500}
+/* Body map */
+.bodymap{margin:30px 0 0;display:grid;justify-items:center}
+.bodymap svg{width:100%;max-width:620px;height:auto}
+.bm-body{fill:#1c2924;stroke:#35493f;stroke-width:1.6}
+.bm-hi g{fill:var(--c);fill-opacity:.55;stroke:var(--c);stroke-width:1.5}
+.bm-line{fill:none;stroke:#0d1311;stroke-width:2;stroke-opacity:.7}
+.bm-lead{fill:none;stroke:SOFT;stroke-width:1;stroke-dasharray:3 4}
+.bm-txt text{font:600 15px HEADF;fill:INK}
+.bm-txt text.sub{font:500 12px MONOF;fill:SOFT}
+@media (max-width:980px){.anat{grid-template-columns:1fr}}
+@media (max-width:560px){.big3{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.tabs main section[data-panel].active{animation:none}}
 """
 JS="""
 document.documentElement.classList.add('js');
@@ -152,9 +207,33 @@ function ring(svg){svg.querySelectorAll('.arc').forEach(function(a){var r=+a.get
 document.querySelectorAll('.rings .arc').forEach(function(a){var c=2*Math.PI*(+a.getAttribute('r'));a.style.strokeDasharray=c;a.style.strokeDashoffset=reduce?c*(1-a.dataset.p/100):c;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add('in');if(t.dataset.count)countUp(t);if(t.classList.contains('rings'))ring(t);io.unobserve(t);});},{threshold:0.2,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal,[data-count],.bars,.rings').forEach(function(n){io.observe(n);});
-var links=[].slice.call(document.querySelectorAll('.nav a'));
-var so=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id);});});},{rootMargin:'-45% 0px -50% 0px'});
-document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s);});
+// Tabs: each main section becomes a panel; every in-page link to it (menu, index, buttons) opens it.
+// Without JavaScript the page stays one long document.
+var panels=[].slice.call(document.querySelectorAll('main section[id]'));
+var navLinks=[].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+if(panels.length>1){
+document.documentElement.classList.add('tabs');
+var rtl=document.documentElement.dir==='rtl';
+function label(id){var a=document.querySelector('.nav a[href="#'+id+'"]');return a?a.textContent.trim():id;}
+panels.forEach(function(p,i){p.setAttribute('data-panel','');
+var f=document.createElement('nav');f.className='pager';f.setAttribute('aria-label',label(p.id));
+if(i>0){var a=document.createElement('a');a.href='#'+panels[i-1].id;a.className='prev';a.textContent=(rtl?'→ ':'← ')+label(panels[i-1].id);f.appendChild(a);}
+if(i<panels.length-1){var b=document.createElement('a');b.href='#'+panels[i+1].id;b.className='next';b.textContent=label(panels[i+1].id)+(rtl?' ←':' →');f.appendChild(b);}
+(p.querySelector('.wrap')||p).appendChild(f);});
+function show(id,target,url){panels.forEach(function(p){p.classList.toggle('active',p.id===id);});
+navLinks.forEach(function(l){var on=l.getAttribute('href')==='#'+id;l.classList.toggle('on',on);if(on)l.setAttribute('aria-current','true');else l.removeAttribute('aria-current');});
+if(url&&history.replaceState)history.replaceState(null,'','#'+id);
+if(target)target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);var t=id&&document.getElementById(id);var p=t&&t.closest('section[data-panel]');if(!p)return;e.preventDefault();show(p.id,t,true);});
+var h=decodeURIComponent(location.hash.slice(1)),ht=h&&document.getElementById(h),hp=ht&&ht.closest('section[data-panel]');
+show(hp?hp.id:panels[0].id,null,false);if(hp)setTimeout(function(){ht.scrollIntoView({block:'start'});},60);
+}
+// Anatomy: a legend chip highlights its structure in the drawing and shows its description.
+document.querySelectorAll('.anat').forEach(function(box){var chips=[].slice.call(box.querySelectorAll('.an-chip'));
+function pick(k){box.classList.toggle('picking',!!k);chips.forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.k===k));});
+box.querySelectorAll('[data-k]').forEach(function(n){if(n.classList.contains('an-chip'))return;if(n.classList.contains('an-note'))n.hidden=n.dataset.k!==k;else n.classList.toggle('lit',n.dataset.k===k);});}
+chips.forEach(function(c){c.addEventListener('click',function(){pick(c.getAttribute('aria-pressed')==='true'?'':c.dataset.k);});});
+box.querySelectorAll('.an-svg [data-k]').forEach(function(g){g.addEventListener('click',function(){pick(g.dataset.k);});});});
 })();
 """
 def css(lang,extra=''):

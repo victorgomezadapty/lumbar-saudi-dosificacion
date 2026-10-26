@@ -146,6 +146,61 @@ section{padding:56px 0}.kpis,.toc{grid-template-columns:1fr 1fr}.grid-3,.road,.o
 .js .reveal,.bar .fill,.rings .arc,.toc a,.btn{transition:none!important;transform:none!important;opacity:1!important}
 .js .bars:not(.in) .fill{transform:none!important}.kicker .dot{animation:none}}
 @media print{.topbar,.progress,.cta{display:none}body{background:#fff;color:#000}.js .reveal{opacity:1!important;transform:none!important}}
+
+/* Tabs */
+.tabs main section[data-panel]{display:none}
+.tabs main section[data-panel].active{display:block;animation:panel .35s ease}
+@keyframes panel{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.nav a.on{color:#e9efea;background:#17221e;box-shadow:inset 0 -2px 0 #e3a23b}
+.pager{display:none}
+.tabs .pager{display:flex;flex-wrap:wrap;gap:12px;margin-top:56px;padding-top:24px;border-top:1px solid #273a33}
+.pager a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:10px;border:1px solid #35493f;background:#17221e;color:#e9efea;text-decoration:none;font:600 14px 'IBM Plex Sans Arabic','Noto Naskh Arabic',system-ui,sans-serif}
+.pager a:hover{border-color:#e3a23b}
+.pager .next{margin-inline-start:auto;background:#e3a23b;border-color:#e3a23b;color:#1a1203}
+/* Anatomy */
+.anat{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:center;margin-top:30px}
+.an-fig{margin:0}
+.an-svg{width:100%;height:auto;display:block}
+.an-skin{fill:none;stroke:#35493f;stroke-width:2;stroke-dasharray:4 6}
+.an-b polygon{fill:#26332d;stroke:#a7b5ad;stroke-width:1.6;stroke-linejoin:round}
+.an-d polygon{fill:rgba(127,220,180,.22);stroke:#7fdcb4;stroke-width:1.4}
+.an-m{fill:var(--c);fill-opacity:.32;stroke:var(--c);stroke-width:1.6;cursor:pointer;transition:opacity .25s,fill-opacity .25s}
+.an-m .fib{fill:none;stroke:#0d1311;stroke-opacity:.45;stroke-width:1.4}
+.an-l text{font:600 13px 'JetBrains Mono',ui-monospace,Consolas,monospace;fill:#e9efea;text-anchor:middle}
+.an-b,.an-d{cursor:pointer;transition:opacity .25s}
+.picking .an-svg [data-k]{opacity:.18}
+.picking .an-svg [data-k].lit{opacity:1}
+.picking .an-m.lit{fill-opacity:.65}
+.an-legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.an-chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid #35493f;background:#1c2924;color:#e9efea;font:500 14px 'IBM Plex Sans Arabic','Noto Naskh Arabic',system-ui,sans-serif;cursor:pointer}
+.an-chip i{width:12px;height:12px;border-radius:50%;background:var(--c);flex:none}
+.an-chip[aria-pressed=true]{border-color:var(--c);box-shadow:0 0 0 1px var(--c) inset}
+.an-detail{min-height:96px;background:#1c2924;border:1px solid #273a33;border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.an-detail p{margin:0;color:#a7b5ad}
+.an-detail b{color:#e9efea}
+.picking .an-note[data-k=""]{display:none}
+/* Pictograms */
+.big3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 8px}
+.pic{margin:0;background:#1c2924;border:1px solid #273a33;border-radius:12px;padding:10px 10px 12px;text-align:center}
+.pic svg{width:100%;height:auto;display:block}
+.pic-floor{stroke:#35493f;stroke-width:2}
+.pic-body{fill:none;stroke:#c9d3cc;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.pic-body circle{fill:#c9d3cc;stroke:none}
+.pic-hi{fill:none;stroke:var(--c);stroke-width:9;stroke-linecap:round}
+.pic figcaption{font-size:12.5px;color:#a7b5ad;margin-top:6px}
+.pic figcaption b{font-weight:500}
+/* Body map */
+.bodymap{margin:30px 0 0;display:grid;justify-items:center}
+.bodymap svg{width:100%;max-width:620px;height:auto}
+.bm-body{fill:#1c2924;stroke:#35493f;stroke-width:1.6}
+.bm-hi g{fill:var(--c);fill-opacity:.55;stroke:var(--c);stroke-width:1.5}
+.bm-line{fill:none;stroke:#0d1311;stroke-width:2;stroke-opacity:.7}
+.bm-lead{fill:none;stroke:#8a998f;stroke-width:1;stroke-dasharray:3 4}
+.bm-txt text{font:600 15px 'IBM Plex Sans Arabic','Noto Naskh Arabic',system-ui,sans-serif;fill:#e9efea}
+.bm-txt text.sub{font:500 12px 'JetBrains Mono',ui-monospace,Consolas,monospace;fill:#8a998f}
+@media (max-width:980px){.anat{grid-template-columns:1fr}}
+@media (max-width:560px){.big3{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.tabs main section[data-panel].active{animation:none}}
 </style>
 </head>
 <body>
@@ -209,6 +264,7 @@ section{padding:56px 0}.kpis,.toc{grid-template-columns:1fr 1fr}.grid-3,.road,.o
   <div class="num reveal">01 / السياق السعودي</div>
   <h2 class="reveal">انتشار مرتفع، ودليل جديد، وممارسة متفاوتة.</h2>
   <p class="lead reveal">ألم أسفل الظهر هو السبب الأول للإعاقة في المملكة العربية السعودية بحسب الدليل الوطني نفسه. ينظّم دليل 2026 التقييم والعلاج، لكنه يترك وصف التمارين دون تحديد.</p>
+  <div class="anat card reveal"><div><span class="tag">التشريح</span><h3 style="margin-top:12px">المنطقة القطنية في لمحة</h3><p class="muted">تتحدث الإرشادات عن تقوية الجذع وتفعيل عضلات محددة والحد من التصوير الطبي. يوضح هذا الرسم البُنى التي تقصدها.</p><div class="an-legend" role="group" aria-label="المنطقة القطنية في لمحة"><button type="button" class="an-chip" data-k="bones" aria-pressed="false" style="--c:#a7b5ad"><i></i>الفقرات L1 إلى L5 والعجز</button><button type="button" class="an-chip" data-k="discs" aria-pressed="false" style="--c:#7fdcb4"><i></i>الأقراص بين الفقرات</button><button type="button" class="an-chip" data-k="multifidus" aria-pressed="false" style="--c:#34b78a"><i></i>العضلة متعددة الشُّعب</button><button type="button" class="an-chip" data-k="erector" aria-pressed="false" style="--c:#e3a23b"><i></i>العضلة الناصبة للفقار</button><button type="button" class="an-chip" data-k="psoas" aria-pressed="false" style="--c:#8fb3ff"><i></i>العضلة القطنية الكبرى</button><button type="button" class="an-chip" data-k="transversus" aria-pressed="false" style="--c:#e88aa6"><i></i>العضلة البطنية المستعرضة</button></div><div class="an-detail" aria-live="polite"><p class="an-note" data-k="" >اضغط على أحد عناصر القائمة لإبرازه في الرسم وقراءة وظيفته.</p><p class="an-note" data-k="bones" hidden><b>الفقرات L1 إلى L5 والعجز.</b> الفقرات القطنية الخمس هي الأكبر في الجزء المتحرك من العمود الفقري، وتتحمل أجسامها معظم الحمل المحوري. ويصلها العجز بالحوض.</p><p class="an-note" data-k="discs" hidden><b>الأقراص بين الفقرات.</b> توزع الحمل بين أجسام الفقرات وتسمح بالحركة. تغيّرات الأقراص في التصوير شائعة أيضًا لدى أشخاص بلا ألم، ولهذا يقصر الدليل السعودي التصوير على العلامات التحذيرية أو على الحالات التي تغيّر فيها النتيجة خطة العلاج.</p><p class="an-note" data-k="multifidus" hidden><b>العضلة متعددة الشُّعب.</b> حزم قصيرة وعميقة بجوار النتوءات الشوكية تمنح كل قطعة فقرية ثباتًا. وهي هدف شائع للتفعيل العضلي المحدد للجذع الذي يوصي به دليل JOSPT 2021، وتعمل في تمرين bird dog.</p><p class="an-note" data-k="erector" hidden><b>العضلة الناصبة للفقار.</b> مجموعة باسطة طويلة على جانبي العمود الفقري، تبسط الجذع وتتحكم في انثنائه. وتشارك في تقوية الجذع وتحمّله اللذين يوصي بهما JOSPT 2021.</p><p class="an-note" data-k="psoas" hidden><b>العضلة القطنية الكبرى.</b> تنشأ من أجسام الفقرات القطنية ونتوءاتها المستعرضة وتصل إلى عظم الفخذ: هي القابضة الرئيسية للورك، وتضغط العمود الفقري عند انقباضها.</p><p class="an-note" data-k="transversus" hidden><b>العضلة البطنية المستعرضة.</b> أعمق طبقة في جدار البطن، تحيط بالجذع كالمشد وترفع الضغط داخل البطن. وتظهر في برامج التحكم الحركي.</p></div><p class="small soft">رسم توضيحي بمنظر جانبي (الظهر إلى اليسار والبطن إلى اليمين)، ليس بمقياس حقيقي.</p></div><figure class="an-fig"><svg class="an-svg" viewBox="40 20 400 420" role="img" aria-labelledby="an-title"><title id="an-title">منظر جانبي للعمود الفقري القطني يوضح الفقرات والأقراص وأربع مجموعات عضلية</title><path class="an-skin" d="M78 26 C 60 140, 64 260, 112 360 C 140 420, 170 436, 200 440 M436 70 C 452 170, 450 300, 420 400"/><g class="an-m" data-k="erector" style="--c:#e3a23b"><path d="M136.3 36.0 C 136.0 46.9, 132.9 82.4, 134.3 101.3 C 135.8 120.2, 142.2 133.0, 144.8 149.3 C 147.4 165.6, 149.9 182.7, 150.0 199.0 C 150.1 215.3, 148.1 231.5, 145.3 246.9 C 142.6 262.2, 131.2 273.6, 133.3 291.1 C 135.4 308.6, 147.9 329.5, 158.0 352.0 C 168.1 374.5, 188.0 413.7, 194.0 426.0 L 172.0 434.0 C 163.7 420.3, 134.5 375.8, 122.0 352.0 C 109.5 328.2, 99.4 308.6, 97.3 291.1 C 95.2 273.6, 106.6 262.2, 109.3 246.9 C 112.1 231.5, 114.1 215.3, 114.0 199.0 C 113.9 182.7, 111.4 165.6, 108.8 149.3 C 106.2 133.0, 99.8 120.2, 98.3 101.3 C 96.9 82.4, 100.0 46.9, 100.3 36.0 Z"/></g><g class="an-m" data-k="multifidus" style="--c:#34b78a"><path d="M194.3 55.4 C 194.3 59.7, 192.4 68.4, 194.3 81.4 C 196.3 94.4, 203.1 115.9, 206.1 133.3 C 209.0 150.7, 211.7 168.6, 212.0 186.0 C 212.3 203.4, 210.7 220.9, 208.1 237.9 C 205.6 255.0, 198.0 269.7, 196.7 288.4 C 195.3 307.0, 197.8 329.7, 200.0 350.0 C 202.2 370.3, 208.3 400.0, 210.0 410.0 L 196.0 418.0 C 190.7 406.7, 173.1 371.2, 164.0 350.0 C 154.9 328.8, 143.1 308.3, 141.3 291.1 C 139.5 273.9, 150.6 262.2, 153.3 246.9 C 156.1 231.5, 158.1 215.3, 158.0 199.0 C 157.9 182.7, 155.4 165.6, 152.8 149.3 C 150.2 133.0, 143.8 114.3, 142.3 101.3 C 140.9 88.3, 144.0 76.3, 144.3 71.3 Z"/><path class="fib" d="M194 67 L 144 111"/><path class="fib" d="M206 119 L 155 159"/><path class="fib" d="M212 172 L 160 209"/><path class="fib" d="M208 224 L 155 257"/><path class="fib" d="M197 274 L 143 301"/></g><g class="an-m" data-k="psoas" style="--c:#8fb3ff"><path d="M258.0 58.0 C 258.0 61.0, 256.0 63.8, 258.0 76.0 C 260.0 88.2, 267.0 112.7, 270.0 131.0 C 273.0 149.3, 275.7 167.7, 276.0 186.0 C 276.3 204.3, 274.7 222.7, 272.0 241.0 C 269.3 259.3, 254.3 272.8, 260.0 296.0 C 265.7 319.2, 294.3 356.7, 306.0 380.0 C 317.7 403.3, 326.0 426.7, 330.0 436.0 L 362.0 430.0 C 359.0 421.0, 352.7 398.3, 344.0 376.0 C 335.3 353.7, 314.8 318.5, 310.0 296.0 C 305.2 273.5, 314.7 259.3, 315.0 241.0 C 315.3 222.7, 314.7 204.3, 312.0 186.0 C 309.3 167.7, 304.3 149.3, 299.0 131.0 C 293.7 112.7, 283.5 88.2, 280.0 76.0 C 276.5 63.8, 278.3 61.0, 278.0 58.0 Z"/></g><g class="an-b" data-k="bones"><polygon points="198.8,60.7 272.3,51.6 277.2,91.3 203.7,100.4"/><polygon points="212.0,113.0 285.9,109.1 288.0,149.0 214.1,152.9"/><polygon points="219.0,166.0 293.0,166.0 293.0,206.0 219.0,206.0"/><polygon points="216.5,218.5 290.3,223.6 287.5,263.5 213.7,258.4"/><polygon points="207.0,269.9 279.9,282.7 273.0,322.1 200.1,309.3"/><polygon points="200.2,71.6 167.2,73.6 135.5,94.6 141.2,108.0 169.7,94.5 202.4,89.4"/><polygon points="212.6,123.9 179.5,123.7 146.5,142.4 151.2,156.2 180.6,144.6 213.5,141.9"/><polygon points="219.0,177.0 186.0,175.0 152.0,192.0 156.0,206.0 186.0,196.0 219.0,195.0"/><polygon points="215.7,229.4 182.9,225.1 147.8,239.7 150.8,254.0 181.5,246.1 214.5,247.4"/><polygon points="205.1,280.7 173.0,273.0 136.5,283.8 138.0,298.3 169.3,293.7 202.0,298.4"/><polygon points="200.0,334.0 276.0,343.0 262.0,384.0 236.0,426.0 214.0,428.0 196.0,392.0"/></g><g class="an-d" data-k="discs"><polygon points="210.7,101.4 276.4,95.6 277.3,105.6 211.6,111.4"/><polygon points="219.9,154.4 285.9,152.6 286.1,162.6 220.1,164.4"/><polygon points="221.2,207.4 287.2,209.7 286.8,219.6 220.8,217.3"/><polygon points="213.9,259.5 279.4,267.6 278.1,277.5 212.6,269.4"/><polygon points="206.0,318.0 272.0,326.0 270.0,336.0 204.0,328.0"/></g><g class="an-m" data-k="transversus" style="--c:#e88aa6"><path d="M392 120 C 420 190, 424 290, 398 380 L 384 376 C 406 292, 404 194, 378 126 Z"/></g><g class="an-l" aria-hidden="true"><text x="238" y="81">L1</text><text x="250" y="136">L2</text><text x="256" y="191">L3</text><text x="252" y="246">L4</text><text x="240" y="301">L5</text><text x="232" y="392">S</text></g></svg></figure></div>
   <div class="grid-2" style="margin-top:30px">
    <div class="card glow reveal">
     <span class="tag">الدليل الوطني 2026</span>
@@ -293,6 +349,7 @@ section{padding:56px 0}.kpis,.toc{grid-template-columns:1fr 1fr}.grid-3,.road,.o
      <h3 style="margin-top:12px">منهج McGill</h3>
      <p>ستيوارت ماكغيل (Stuart McGill)، المتخصص في الميكانيكا الحيوية للعمود الفقري (Spine Biomechanics Laboratory، جامعة واترلو)، مؤلف واسع التأثير في الممارسة. منهجه اقتراح من مؤلف وليس توصية في دليل.</p>
      <p>مثال قابل للتحقق: قاس McGill وKarpowicz عام 2009، باستخدام تخطيط كهربية العضل السطحي والتحليل ثلاثي الأبعاد، أشكالًا مختلفة من تمرين curl up والجسر الجانبي وbird dog لدى 8 رجال أصحاء، بهدف توجيه مستوى البداية والتدرّج والجرعة والتقنيات التصحيحية. وهي التمارين الثلاثة المعروفة شعبيًا باسم “Big 3”. إنها دراسة علوم أساسية وليست تجربة على مرضى.</p>
+     <div class="big3"><figure class="pic"><svg viewBox="16 36 220 84" role="img" aria-label="Curl-up · العضلة المستقيمة البطنية"><line class="pic-floor" x1="10" y1="112" x2="230" y2="112"/><g class="pic-body"><circle cx="44" cy="84" r="11"/><path d="M54 90 L120 104"/><path d="M120 104 L162 72 L196 108"/><path d="M120 104 L190 108"/><path d="M62 94 L92 108"/></g><g class="pic-hi" style="--c:#f0a6c0"><path d="M66 94 L112 103"/></g></svg><figcaption><b>Curl-up · العضلة المستقيمة البطنية</b></figcaption></figure><figure class="pic"><svg viewBox="16 36 220 84" role="img" aria-label="الجسر الجانبي · العضلة المربعة القطنية والعضلات المائلة"><line class="pic-floor" x1="10" y1="112" x2="230" y2="112"/><g class="pic-body"><circle cx="40" cy="58" r="11"/><path d="M50 66 L206 104"/><path d="M58 70 L58 106 L80 106"/></g><g class="pic-hi" style="--c:#c3a3ff"><path d="M96 77 L150 90"/></g></svg><figcaption><b>الجسر الجانبي · العضلة المربعة القطنية والعضلات المائلة</b></figcaption></figure><figure class="pic"><svg viewBox="16 36 220 84" role="img" aria-label="Bird dog · العضلة الناصبة للفقار والعضلة متعددة الشُّعب"><line class="pic-floor" x1="10" y1="112" x2="230" y2="112"/><g class="pic-body"><circle cx="190" cy="52" r="11"/><path d="M176 62 L104 66"/><path d="M168 64 L168 108"/><path d="M104 66 L104 108 L80 108"/><path d="M176 60 L224 46"/><path d="M104 66 L40 58"/></g><g class="pic-hi" style="--c:#e3a23b"><path d="M112 64 L164 62"/></g></svg><figcaption><b>Bird dog · العضلة الناصبة للفقار والعضلة متعددة الشُّعب</b></figcaption></figure></div><p class="small soft">رسوم توضيحية للتمارين الثلاثة التي حللها McGill وKarpowicz (2009)؛ يشير اللون إلى المنطقة الأكثر عملًا وفق الوصف المعتاد لكل تمرين.</p>
      <a class="small" href="https://doi.org/10.1016/j.apmr.2008.06.026">McGill SM, Karpowicz A. Arch Phys Med Rehabil 2009;90(1):118-26</a>
     </div>
    </div>
@@ -437,9 +494,33 @@ function ring(svg){svg.querySelectorAll('.arc').forEach(function(a){var r=+a.get
 document.querySelectorAll('.rings .arc').forEach(function(a){var c=2*Math.PI*(+a.getAttribute('r'));a.style.strokeDasharray=c;a.style.strokeDashoffset=reduce?c*(1-a.dataset.p/100):c;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add('in');if(t.dataset.count)countUp(t);if(t.classList.contains('rings'))ring(t);io.unobserve(t);});},{threshold:0.2,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal,[data-count],.bars,.rings').forEach(function(n){io.observe(n);});
-var links=[].slice.call(document.querySelectorAll('.nav a'));
-var so=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id);});});},{rootMargin:'-45% 0px -50% 0px'});
-document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s);});
+// Tabs: each main section becomes a panel; every in-page link to it (menu, index, buttons) opens it.
+// Without JavaScript the page stays one long document.
+var panels=[].slice.call(document.querySelectorAll('main section[id]'));
+var navLinks=[].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+if(panels.length>1){
+document.documentElement.classList.add('tabs');
+var rtl=document.documentElement.dir==='rtl';
+function label(id){var a=document.querySelector('.nav a[href="#'+id+'"]');return a?a.textContent.trim():id;}
+panels.forEach(function(p,i){p.setAttribute('data-panel','');
+var f=document.createElement('nav');f.className='pager';f.setAttribute('aria-label',label(p.id));
+if(i>0){var a=document.createElement('a');a.href='#'+panels[i-1].id;a.className='prev';a.textContent=(rtl?'→ ':'← ')+label(panels[i-1].id);f.appendChild(a);}
+if(i<panels.length-1){var b=document.createElement('a');b.href='#'+panels[i+1].id;b.className='next';b.textContent=label(panels[i+1].id)+(rtl?' ←':' →');f.appendChild(b);}
+(p.querySelector('.wrap')||p).appendChild(f);});
+function show(id,target,url){panels.forEach(function(p){p.classList.toggle('active',p.id===id);});
+navLinks.forEach(function(l){var on=l.getAttribute('href')==='#'+id;l.classList.toggle('on',on);if(on)l.setAttribute('aria-current','true');else l.removeAttribute('aria-current');});
+if(url&&history.replaceState)history.replaceState(null,'','#'+id);
+if(target)target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);var t=id&&document.getElementById(id);var p=t&&t.closest('section[data-panel]');if(!p)return;e.preventDefault();show(p.id,t,true);});
+var h=decodeURIComponent(location.hash.slice(1)),ht=h&&document.getElementById(h),hp=ht&&ht.closest('section[data-panel]');
+show(hp?hp.id:panels[0].id,null,false);if(hp)setTimeout(function(){ht.scrollIntoView({block:'start'});},60);
+}
+// Anatomy: a legend chip highlights its structure in the drawing and shows its description.
+document.querySelectorAll('.anat').forEach(function(box){var chips=[].slice.call(box.querySelectorAll('.an-chip'));
+function pick(k){box.classList.toggle('picking',!!k);chips.forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.k===k));});
+box.querySelectorAll('[data-k]').forEach(function(n){if(n.classList.contains('an-chip'))return;if(n.classList.contains('an-note'))n.hidden=n.dataset.k!==k;else n.classList.toggle('lit',n.dataset.k===k);});}
+chips.forEach(function(c){c.addEventListener('click',function(){pick(c.getAttribute('aria-pressed')==='true'?'':c.dataset.k);});});
+box.querySelectorAll('.an-svg [data-k]').forEach(function(g){g.addEventListener('click',function(){pick(g.dataset.k);});});});
 })();
 </script>
 </body>
