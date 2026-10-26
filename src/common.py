@@ -1,6 +1,6 @@
-# Shared CSS/JS (palette from acl-semg-robustness.vercel.app, values inlined so no CSS custom properties are needed)
-P=dict(bg="#0b111c",bg2="#0f1726",card="#161e2e",card2="#1b2537",line="#26324a",line2="#33415e",
- ink="#e8edf6",muted="#a3afc4",soft="#8592aa",coral="#e8603c",cyan="#26a3cc",coralg="#ff8a65",cyang="#5fd4f5",focus="#ffd166")
+# Shared CSS/JS. Palette: green for progression, amber for load; values inlined so no CSS custom properties are needed.
+P=dict(bg="#0d1311",bg2="#121b18",card="#17221e",card2="#1c2924",line="#273a33",line2="#35493f",
+ ink="#e9efea",muted="#a7b5ad",soft="#8a998f",coral="#e3a23b",cyan="#34b78a",coralg="#f3c46a",cyang="#7fdcb4",focus="#9fe3ff")
 CSS="""
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -12,7 +12,7 @@ a{color:CYANG}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,CYAN,CORAL);z-index:40}
 [dir=rtl] .progress{transform-origin:100% 50%;background:linear-gradient(270deg,CYAN,CORAL)}
-.topbar{position:sticky;top:0;z-index:30;background:rgba(11,17,28,.84);backdrop-filter:blur(12px);border-bottom:1px solid LINE}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(13,19,17,.86);backdrop-filter:blur(12px);border-bottom:1px solid LINE}
 .topbar .wrap{display:flex;align-items:center;gap:18px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;color:INK;text-decoration:none;font:600 16px HEADF;white-space:nowrap}
 .brand svg{width:30px;height:30px;flex:none}
@@ -36,14 +36,14 @@ h3{font-size:21px;margin:0 0 8px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font:600 15px BODYF;text-decoration:none;border:1px solid LINE2;color:INK;background:CARD;transition:transform .2s,border-color .2s}
 .btn:hover{transform:translateY(-1px);border-color:SOFT}
-.btn.primary{background:CORAL;border-color:CORAL;color:#140804}
+.btn.primary{background:CORAL;border-color:CORAL;color:#1a1203}
 section{padding:84px 0;border-top:1px solid LINE;scroll-margin-top:60px}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid-2>*,.grid-3>*,.hero-grid>*,.optima>*,.toc>*,.kpis>*{min-width:0}
 .card{background:CARD;border:1px solid LINE;border-radius:18px;padding:26px}
-.card.glow{box-shadow:0 30px 80px -40px rgba(38,163,204,.5)}
-.card p{color:#d3dbe8}
+.card.glow{box-shadow:0 30px 80px -40px rgba(52,183,138,.45)}
+.card p{color:#d5ded8}
 .tag{display:inline-block;font:600 11px MONOF;letter-spacing:1px;text-transform:uppercase;padding:4px 9px;border-radius:6px;background:CARD2;color:CYANG;border:1px solid LINE2}
 .tag.coral{color:CORALG}
 .abs{display:inline-block;font:500 10.5px MONOF;padding:1px 6px;border-radius:5px;border:1px dashed LINE2;color:SOFT;vertical-align:middle;white-space:nowrap}
@@ -52,7 +52,7 @@ section{padding:84px 0;border-top:1px solid LINE;scroll-margin-top:60px}
 .callout.cy{border-inline-start-color:CYAN}
 .hero{padding-top:70px;padding-bottom:40px}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
-.scope{background:linear-gradient(180deg,CARD,BG2);border:1px solid LINE2;border-radius:22px;padding:22px;box-shadow:0 40px 90px -45px rgba(232,96,60,.45)}
+.scope{background:linear-gradient(180deg,CARD,BG2);border:1px solid LINE2;border-radius:22px;padding:22px;box-shadow:0 40px 90px -45px rgba(227,162,59,.4)}
 .scope-top{display:flex;justify-content:space-between;font:12px MONOF;color:SOFT;margin-bottom:6px;gap:8px}
 .scope-top .live{color:CORALG}
 .rings{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center}
@@ -84,7 +84,7 @@ td.no{color:CORALG;font-weight:600}td.yes{color:CYANG;font-weight:600}
 .ev{background:CARD2;border:1px solid LINE;border-radius:14px;padding:18px}
 .ev .yr{font:600 12px MONOF;color:SOFT}
 .ev b{display:block;font:600 16px HEADF;margin:6px 0}
-.ev p{margin:6px 0 0;font-size:14.5px;color:#d3dbe8}
+.ev p{margin:6px 0 0;font-size:14.5px;color:#d5ded8}
 .ev .big{font:600 30px MONOF;color:CORAL;display:block;margin-top:6px}
 .ev a{font-size:13px}
 .bars{display:grid;gap:12px;margin:18px 0 6px}
@@ -113,8 +113,8 @@ td.no{color:CORALG;font-weight:600}td.yes{color:CYANG;font-weight:600}
 [dir=rtl] .rules li{padding:14px 56px 14px 16px}
 .rules li::before{content:counter(r,decimal-leading-zero);position:absolute;inset-inline-start:16px;top:14px;font:600 13px MONOF;color:CORALG}
 .rules li small{display:block;color:SOFT;font-size:12.5px;margin-top:4px}
-.concept{border:1px dashed CORAL;border-radius:18px;padding:26px;background:rgba(232,96,60,.05)}
-ol.refs{padding-inline-start:24px;font-size:14.5px;color:#d3dbe8}
+.concept{border:1px dashed CORAL;border-radius:18px;padding:26px;background:rgba(227,162,59,.06)}
+ol.refs{padding-inline-start:24px;font-size:14.5px;color:#d5ded8}
 ol.refs li{margin-bottom:9px;overflow-wrap:anywhere}
 ol.refs .st{color:SOFT;font-size:12.5px}
 footer{border-top:1px solid LINE;padding:44px 0 60px;color:MUTED;font-size:14px}

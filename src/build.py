@@ -1,4 +1,4 @@
-"""Genera el sitio estático en la carpeta superior (site/). Uso: cd src && python3 build.py"""
+"""Genera el sitio estático en la raíz del repositorio. Uso: cd src && python3 build.py"""
 import re,importlib,sys,os
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -18,14 +18,14 @@ def fill(T,d):
     miss=set(re.findall(r'\{\{(\w+)\}\}',T))-set(d)
     if miss: raise SystemExit(f'faltan claves: {miss}')
     return re.sub(r'\{\{(\w+)\}\}',lambda m:d[m.group(1)],T)
-T=open('template.html').read()
+T=open('template.html',encoding='utf-8').read()
 for L in ['es','en','ar']:
     D=importlib.import_module(L).D
     d=dict(D); d['css']=css(L); d['js']=JS
     for x in ['es','en','ar']: d['cur_'+x]='aria-current="page"' if x==L else ''
-    open(f'../lumbar-saudi-{L}.html','w').write(fill(T,d))
+    open(f'../lumbar-saudi-{L}.html','w',encoding='utf-8',newline='\n').write(fill(T,d))
     print(L,'extra',set(D)-set(re.findall(r'\{\{(\w+)\}\}',T)))
 es=importlib.import_module('es').D
-open('../plan.html','w').write(fill(open('plan_template.html').read(),dict(css=css('es',EXTRA),js=JS,st_zen=es['st_zen'])))
-open('../index.html','w').write(fill(open('index_template.html').read(),dict(css=css('es',EXTRA),js=JS)))
+open('../plan.html','w',encoding='utf-8',newline='\n').write(fill(open('plan_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS,st_zen=es['st_zen'])))
+open('../index.html','w',encoding='utf-8',newline='\n').write(fill(open('index_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS)))
 print('ok: index.html, plan.html, lumbar-saudi-{es,en,ar}.html')

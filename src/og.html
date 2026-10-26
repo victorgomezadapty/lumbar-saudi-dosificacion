@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Imagen para redes · Dosificación de carga</title>
+<!-- Fuente de ../og.png (1200×630). Generar: cd src && python3 render_og.py -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { background: #0d1311; color: #e9efea; font-family: "IBM Plex Sans", sans-serif; padding: 58px 64px; display: grid; grid-template-columns: 1fr 300px; gap: 40px;
+    background-image: linear-gradient(#121b18 1px, transparent 1px), linear-gradient(90deg, #121b18 1px, transparent 1px); background-size: 48px 48px; }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .kicker { font: 600 18px "JetBrains Mono", monospace; letter-spacing: 3px; text-transform: uppercase; color: #7fdcb4; }
+  .kicker i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #e3a23b; margin-right: 12px; vertical-align: middle; }
+  h1 { font: 700 64px/1.04 "Space Grotesk", sans-serif; letter-spacing: -2px; margin-top: 20px; }
+  h1 .g { color: #34b78a; } h1 .a { color: #e3a23b; }
+  .stats { display: flex; gap: 18px; }
+  .stat { background: #17221e; border: 1px solid #273a33; border-radius: 16px; padding: 16px 20px; min-width: 200px; }
+  .stat b { display: block; font: 600 38px/1.1 "JetBrains Mono", monospace; }
+  .stat b.a { color: #e3a23b; } .stat b.g { color: #34b78a; }
+  .stat span { font-size: 16px; color: #a7b5ad; }
+  .foot { font: 500 18px "JetBrains Mono", monospace; color: #8a998f; }
+  .bars { align-self: end; display: flex; align-items: flex-end; gap: 22px; height: 440px; padding-bottom: 46px; }
+  .bars div { width: 74px; border-radius: 12px; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div>
+      <p class="kicker"><i></i>Lumbalgia crónica · Arabia Saudí</p>
+      <h1>Una guía saudí nueva.<br><span class="g">Guías, dosis</span><br><span class="a">y vacíos.</span></h1>
+    </div>
+    <div class="stats">
+      <div class="stat"><b class="a">52,3%</b><span>prevalencia anual<br>(124 estudios)</span></div>
+      <div class="stat"><b class="g">239</b><span>ECA en el metaanálisis<br>de dosis de 2026</span></div>
+      <div class="stat"><b>0</b><span>preguntas sobre dosis<br>en la guía saudí</span></div>
+    </div>
+    <p class="foot">dosificacion-carga.vercel.app · ES · EN · AR</p>
+  </div>
+  <div class="bars" aria-hidden="true">
+    <div style="height:150px;background:#34b78a"></div>
+    <div style="height:250px;background:#34b78a"></div>
+    <div style="height:370px;background:#e3a23b"></div>
+  </div>
+</body>
+</html>
