@@ -1,52 +1,52 @@
-# Lumbalgia en Arabia Saudí y dosificación de carga
+# Chronic low back pain in Saudi Arabia and load dosing
 
-Informe en línea sobre dolor lumbar crónico en Arabia Saudí (guía nacional 2026, guías internacionales, evidencia de dosis de ejercicio y vacíos) y plan de un proyecto de dosificación de carga en rehabilitación.
+An online report on chronic low back pain in Saudi Arabia (2026 national guideline, international guidelines, exercise dose evidence and gaps) and a plan for a load dosing project in rehabilitation.
 
-**Sitio:** https://dosificacion-carga.vercel.app
+**Site:** https://dosificacion-carga.vercel.app
 
-![Una guía saudí nueva. Guías, dosis y vacíos.](og.png)
+![A new Saudi guideline. Guidelines, dose and gaps.](og.png)
 
-## Contenido
+## Contents
 
-- `index.html`: portada con enlaces a las tres versiones y al plan.
-- `lumbar-saudi-es.html`: lumbalgia crónica en Arabia Saudí, en español.
-- `lumbar-saudi-en.html`: la misma página en inglés.
-- `lumbar-saudi-ar.html`: la misma página en árabe (RTL; pendiente de revisión nativa, la página lo indica).
-- `plan.html`: plan del proyecto de dosificación de carga: objetivo, tres módulos (tendinopatía aquílea, isquiosurales, lumbalgia crónica), límites de los datos, hoja de ruta de unas 12 semanas, requisitos para un estudio en Riad, riesgos y referencias.
+- `index.html`: cover page with links to the three versions and to the plan.
+- `lumbar-saudi-es.html`: chronic low back pain in Saudi Arabia, in Spanish.
+- `lumbar-saudi-en.html`: the same page in English.
+- `lumbar-saudi-ar.html`: the same page in Arabic (RTL; pending native review, and the page says so).
+- `plan.html`: load dosing project plan: objective, three modules (Achilles tendinopathy, hamstrings, chronic low back pain), limits of the data, a roadmap of about 12 weeks, requirements for a study in Riyadh, risks and references.
 
-Las páginas son HTML autónomo con CSS y JavaScript en línea. Cada sección es una **pestaña** (el menú, el índice y los botones anterior/siguiente la abren, y la URL con `#sección` enlaza directamente); sin JavaScript se ven completas. Incluyen **dibujos anatómicos propios en SVG**: columna lumbar en vista lateral con vértebras, discos y cuatro grupos musculares (interactiva), pictogramas de los tres ejercicios de McGill y, en el plan, un mapa corporal de las tres regiones. Son esquemas ilustrativos, no a escala. Respetan `prefers-reduced-motion`. Solo dependen de Google Fonts.
+The pages are self-contained HTML with inline CSS and JavaScript. Each section is a **tab** (the menu, the index and the previous/next buttons open it, and a URL with `#section` links directly to it); without JavaScript they display in full. They include **original anatomical drawings in SVG**: a lateral view of the lumbar spine with vertebrae, discs and four muscle groups (interactive), pictograms of the three McGill exercises and, in the plan, a body map of the three regions. They are illustrative diagrams, not to scale. They respect `prefers-reduced-motion`. They depend only on Google Fonts.
 
-## Fuentes y verificación
+## Sources and verification
 
-Cada página lista sus fuentes con enlace. "Solo resumen" indica que el dato se tomó del resumen y no del texto completo; "sin verificar" marca lo que aún debe confirmarse. Las cifras principales se contrastaron con las fuentes originales el 25–26 de octubre de 2026: prevalencia (Al Amer 2026), guía saudí (Aldera 2026), actualización de NICE NG59 (julio de 2026), metaanálisis de dosis (Arora 2026) y tamaño del ensayo TEAch (ClinicalTrials.gov NCT04059146).
+Each page lists its sources with a link. "Abstract only" indicates that the figure was taken from the abstract and not from the full text; "not verified" marks what still needs to be confirmed. The main figures were checked against the original sources on 25 and 26 October 2026: prevalence (Al Amer 2026), the Saudi guideline (Aldera 2026), the NICE NG59 update (July 2026), the dose meta-analysis (Arora 2026) and the TEAch trial sample size (ClinicalTrials.gov NCT04059146).
 
-## Cómo reconstruir
+## How to rebuild
 
-Requiere Python 3, sin dependencias externas. Funciona en Windows, macOS y Linux (lectura y escritura en UTF-8).
+Requires Python 3, with no external dependencies. It works on Windows, macOS and Linux (UTF-8 reading and writing).
 
 ```bash
 cd src
-python3 build.py        # escribe los cinco HTML en la raíz
-python3 render_og.py    # opcional: regenera og.png desde og.html (requiere Chrome o Edge)
+python3 build.py        # writes the five HTML files to the root
+python3 render_og.py    # optional: regenerates og.png from og.html (requires Chrome or Edge)
 ```
 
-- `src/common.py`: paleta, CSS y JS compartidos.
-- `src/template.html` con `src/es.py`, `src/en.py` y `src/ar.py`: textos de cada idioma de la página de lumbalgia.
-- `src/plan_template.html`: plan del proyecto (solo español).
-- `src/index_template.html`: portada.
-- `src/anatomy.py` y `src/anatomy_text.py`: dibujos anatómicos y sus textos en ES, EN y AR.
-- `src/og.html`: composición de la imagen para redes (`og.png`).
+- `src/common.py`: shared palette, CSS and JS.
+- `src/template.html` with `src/es.py`, `src/en.py` and `src/ar.py`: text for each language of the low back pain page.
+- `src/plan_template.html`: project plan (Spanish only).
+- `src/index_template.html`: cover page.
+- `src/anatomy.py` and `src/anatomy_text.py`: anatomical drawings and their text in ES, EN and AR.
+- `src/og.html`: composition of the social image (`og.png`).
 
-Si falta alguna clave en una plantilla, el script se detiene y la indica.
+If any key is missing from a template, the script stops and names it.
 
-## Despliegue
+## Deployment
 
-Sitio estático sin paso de compilación en Vercel: se sirven los archivos de la raíz tal cual.
+Static site with no build step on Vercel: the root files are served as they are.
 
-## Licencia
+## Licence
 
-Textos y figuras propias bajo CC BY 4.0; código bajo MIT. Las fuentes citadas conservan sus propios derechos. Ver [LICENSE.md](LICENSE.md).
+Original text and figures under CC BY 4.0; code under MIT. Cited sources keep their own rights. See [LICENSE.md](LICENSE.md).
 
-## Aviso
+## Disclaimer
 
-Información educativa basada en fuentes publicadas. No es consejo médico ni sustituye la valoración de un profesional sanitario.
+Educational information based on published sources. It is not medical advice and does not replace assessment by a health professional.
