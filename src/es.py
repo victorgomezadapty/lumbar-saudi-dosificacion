@@ -3,6 +3,7 @@ title="Dolor lumbar crónico en Arabia Saudí · Guías, dosis de ejercicio y va
 desc="Contexto saudí, guías internacionales y evidencia sobre dosis de ejercicio en dolor lumbar crónico, con fuentes verificadas.",
 skip="Saltar al contenido",brand="Lumbalgia · Arabia Saudí",navlabel="Secciones",
 n1="Contexto saudí",n2="Guías internacionales",n3="Evidencia de dosis",n4="Vacíos",nplan="Plan del proyecto",n5="Fuentes",
+plan_href="plan-es.html",plan_hreflang="es",og_locale="es_ES",
 kicker="Fisioterapia × ciencia de datos · Riad",
 h1a="Dolor lumbar crónico.",h1b="Una guía saudí nueva.",h1c="Ninguna dosis de ejercicio.",
 lead="Arabia Saudí publicó en 2026 su guía nacional de dolor lumbar. Estratifica el riesgo y limita la imagen, pero no responde cuánto ejercicio prescribir. Esta página reúne qué se sabe, qué dicen las guías internacionales sobre la dosis y dónde están los vacíos.",

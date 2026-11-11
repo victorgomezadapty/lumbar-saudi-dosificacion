@@ -234,6 +234,15 @@ function pick(k){box.classList.toggle('picking',!!k);chips.forEach(function(c){c
 box.querySelectorAll('[data-k]').forEach(function(n){if(n.classList.contains('an-chip'))return;if(n.classList.contains('an-note'))n.hidden=n.dataset.k!==k;else n.classList.toggle('lit',n.dataset.k===k);});}
 chips.forEach(function(c){c.addEventListener('click',function(){pick(c.getAttribute('aria-pressed')==='true'?'':c.dataset.k);});});
 box.querySelectorAll('.an-svg [data-k]').forEach(function(g){g.addEventListener('click',function(){pick(g.dataset.k);});});});
+// On the report, ES / EN / AR stay on the same section. Section ids match across the three files.
+var reports={'lumbar-saudi-es.html':1,'lumbar-saudi-en.html':1,'lumbar-saudi-ar.html':1};
+var file=(location.pathname.split('/').pop()||'index.html');
+if(reports[file]){
+document.querySelectorAll('.lang a[hreflang]').forEach(function(a){
+var dest=(a.getAttribute('href')||'').split('#')[0].split('?')[0];
+if(!reports[dest])return;
+a.addEventListener('click',function(){if(location.hash)a.href=dest+location.hash;});
+});}
 })();
 """
 def css(lang,extra=''):

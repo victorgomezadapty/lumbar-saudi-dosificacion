@@ -8,11 +8,13 @@ An online report on chronic low back pain in Saudi Arabia (2026 national guideli
 
 ## Contents
 
-- `index.html`: cover page with links to the three versions and to the plan.
+- `index.html`: English cover page (the site default at `/`) with links to the three report languages and to the English plan. Language is not chosen from `Accept-Language` or cookies.
+- `index-es.html`: the same cover in Spanish.
 - `lumbar-saudi-es.html`: chronic low back pain in Saudi Arabia, in Spanish.
 - `lumbar-saudi-en.html`: the same page in English.
 - `lumbar-saudi-ar.html`: the same page in Arabic (RTL; pending native review, and the page says so).
-- `plan.html`: load dosing project plan: objective, three modules (Achilles tendinopathy, hamstrings, chronic low back pain), limits of the data, a roadmap of about 12 weeks, requirements for a study in Riyadh, risks and references.
+- `plan.html`: English load dosing project plan: objective, three modules (Achilles tendinopathy, hamstrings, chronic low back pain), limits of the data, a roadmap of about 12 weeks, requirements for a study in Riyadh, risks and references.
+- `plan-es.html`: the same plan in Spanish.
 
 The pages are self-contained HTML with inline CSS and JavaScript. Each section is a **tab** (the menu, the index and the previous/next buttons open it, and a URL with `#section` links directly to it); without JavaScript they display in full. They include **original anatomical drawings in SVG**: a lateral view of the lumbar spine with vertebrae, discs and four muscle groups (interactive), pictograms of the three McGill exercises and, in the plan, a body map of the three regions. They are illustrative diagrams, not to scale. They respect `prefers-reduced-motion`. They depend only on Google Fonts.
 
@@ -26,16 +28,18 @@ Requires Python 3, with no external dependencies. It works on Windows, macOS and
 
 ```bash
 cd src
-python3 build.py        # writes the five HTML files to the root
+python3 build.py        # writes the HTML files to the root
 python3 render_og.py    # optional: regenerates og.png from og.html (requires Chrome or Edge)
 ```
 
 - `src/common.py`: shared palette, CSS and JS.
 - `src/template.html` with `src/es.py`, `src/en.py` and `src/ar.py`: text for each language of the low back pain page.
-- `src/plan_template.html`: project plan (Spanish only).
-- `src/index_template.html`: cover page.
+- `src/plan_en_template.html`: project plan in English (`plan.html`).
+- `src/plan_template.html`: project plan in Spanish (`plan-es.html`).
+- `src/index_template.html`: English cover page (`index.html`).
+- `src/index_es_template.html`: Spanish cover page (`index-es.html`).
 - `src/anatomy.py` and `src/anatomy_text.py`: anatomical drawings and their text in ES, EN and AR.
-- `src/og.html`: composition of the social image (`og.png`).
+- `src/og.html`: English composition of the social image (`og.png`, 1200 by 630).
 
 If any key is missing from a template, the script stops and names it.
 

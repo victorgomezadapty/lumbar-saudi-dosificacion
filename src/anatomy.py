@@ -134,8 +134,26 @@ def big3(t):
     return f'<div class="big3">{curl}{side}{bird}</div><p class="small soft">{t["b3_note"]}</p>'
 
 
-def bodymap():
-    """Posterior body map for the plan (Spanish only): the three modules' regions."""
+_BODYMAP = {
+    "es": dict(
+        title="Vista posterior del cuerpo con las tres regiones del plan",
+        lumbar="Región lumbar", lumbar_sub="Módulo 3 · lumbalgia crónica",
+        ham="Isquiosurales", ham_sub="Módulo 2 · lesión muscular",
+        ach="Tendón de Aquiles", ach_sub="Módulo 1 · tendinopatía",
+        cap="Vista posterior, esquema ilustrativo, no a escala. Un mismo motor de reglas para las tres regiones.",
+    ),
+    "en": dict(
+        title="Posterior view of the body with the three regions in the plan",
+        lumbar="Lumbar region", lumbar_sub="Module 3 · chronic low back pain",
+        ham="Hamstrings", ham_sub="Module 2 · muscle injury",
+        ach="Achilles tendon", ach_sub="Module 1 · tendinopathy",
+        cap="Posterior view, illustrative diagram, not to scale. One rules engine for all three regions.",
+    ),
+}
+
+def bodymap(lang="es"):
+    """Posterior body map for the plan: the three modules' regions."""
+    t = _BODYMAP[lang]
     col = {"lumbar": MUSCLE["multifidus"], "isquios": MUSCLE["erector"], "aquiles": MUSCLE["psoas"]}
     leg = "M84 316 L126 322 L123 420 Q121 446 117 474 L113 500 Q111 510 99 510 L93 510 Q88 474 90 444 L86 420 Z"
     leg_r = "M176 316 L134 322 L137 420 Q139 446 143 474 L147 500 Q149 510 161 510 L167 510 Q172 474 170 444 L174 420 Z"
@@ -156,13 +174,13 @@ def bodymap():
         '<ellipse cx="156" cy="440" rx="11" ry="22"/><rect x="153" y="462" width="6" height="40" rx="3"/></g>'
     )
     labels = (
-        '<path class="bm-lead" d="M158 226 H232"/><text x="236" y="222">Región lumbar</text><text class="sub" x="236" y="238">Módulo 3 · lumbalgia crónica</text>'
-        '<path class="bm-lead" d="M168 366 H232"/><text x="236" y="362">Isquiosurales</text><text class="sub" x="236" y="378">Módulo 2 · lesión muscular</text>'
-        '<path class="bm-lead" d="M160 480 H232"/><text x="236" y="476">Tendón de Aquiles</text><text class="sub" x="236" y="492">Módulo 1 · tendinopatía</text>'
+        f'<path class="bm-lead" d="M158 226 H232"/><text x="236" y="222">{t["lumbar"]}</text><text class="sub" x="236" y="238">{t["lumbar_sub"]}</text>'
+        f'<path class="bm-lead" d="M168 366 H232"/><text x="236" y="362">{t["ham"]}</text><text class="sub" x="236" y="378">{t["ham_sub"]}</text>'
+        f'<path class="bm-lead" d="M160 480 H232"/><text x="236" y="476">{t["ach"]}</text><text class="sub" x="236" y="492">{t["ach_sub"]}</text>'
     )
     return (
         '<figure class="bodymap reveal"><svg viewBox="20 8 480 512" role="img" aria-labelledby="bm-t">'
-        '<title id="bm-t">Vista posterior del cuerpo con las tres regiones del plan</title>'
+        f'<title id="bm-t">{t["title"]}</title>'
         f'<g class="bm-body">{body}</g><g class="bm-hi">{hi}</g><g class="bm-txt">{labels}</g></svg>'
-        '<figcaption class="small soft">Vista posterior, esquema ilustrativo, no a escala. Un mismo motor de reglas para las tres regiones.</figcaption></figure>'
+        f'<figcaption class="small soft">{t["cap"]}</figcaption></figure>'
     )
