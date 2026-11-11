@@ -29,6 +29,10 @@ for L in ['es','en','ar']:
     open(f'../lumbar-saudi-{L}.html','w',encoding='utf-8',newline='\n').write(fill(T,d))
     print(L,'extra',set(D)-set(re.findall(r'\{\{(\w+)\}\}',T)))
 es=importlib.import_module('es').D
-open('../plan.html','w',encoding='utf-8',newline='\n').write(fill(open('plan_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS,st_zen=es['st_zen'],bodymap=anatomy.bodymap())))
-open('../index.html','w',encoding='utf-8',newline='\n').write(fill(open('index_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS)))
-print('ok: index.html, plan.html, lumbar-saudi-{es,en,ar}.html')
+en=importlib.import_module('en').D
+# English is the default public entry. Spanish editions stay at their own files.
+open('../plan.html','w',encoding='utf-8',newline='\n').write(fill(open('plan_en_template.html',encoding='utf-8').read(),dict(css=css('en',EXTRA),js=JS,st_zen=en['st_zen'],bodymap=anatomy.bodymap('en'))))
+open('../plan-es.html','w',encoding='utf-8',newline='\n').write(fill(open('plan_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS,st_zen=es['st_zen'],bodymap=anatomy.bodymap('es'))))
+open('../index.html','w',encoding='utf-8',newline='\n').write(fill(open('index_template.html',encoding='utf-8').read(),dict(css=css('en',EXTRA),js=JS)))
+open('../index-es.html','w',encoding='utf-8',newline='\n').write(fill(open('index_es_template.html',encoding='utf-8').read(),dict(css=css('es',EXTRA),js=JS)))
+print('ok: index.html, index-es.html, plan.html, plan-es.html, lumbar-saudi-{es,en,ar}.html')
